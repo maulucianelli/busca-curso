@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Busca Curso</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{%static 'css/materialize.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{%static 'css/style.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="purple darken-3" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo">BuscaCurso</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'index' %}">Página Inicial </a></li>
+        <li><a href="{% url 'course_list' %}">Lista de Cursos </a></li>
+        <li><a href="{% url 'support' %}">Suporte </a></li></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="{% url 'index' %}">Página Inicial <i class="material-icons">home</i></a></li>
+        <li><a href="{% url 'index' %}">Lista de Cursos <i class="material-icons">format_list_bulleted
+</i></a></li>
+        <li><a href="{% url 'index' %}">Suporte <i class="material-icons">people
+</i></a></li></a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Bem Vindo ao BuscaCurso!</h1>
+      <a href="{% url 'details' %}">IR PARA DETALHES DO CURSO</a>
+      <div class="row center">
+        <h5 class="header col s12 light">Está buscando o melhor curso para você? Confira nossa lista de cursos e encontre agora o seu!</h5>
+      </div>
+      <div class="row center">
+        <a href="{% url 'course_list' %}" id="download-button" class="btn-large waves-effect waves-light orange">Achar meu curso</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Dados Rapidos e Confiáveis</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">O seu futuro é a nossa prioridade</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Plataforma Fácil e Versátil</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer purple darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Equipe do TCC</h5>
+          <p class="grey-text text-lighten-4">
+            <ul>
+              <li>Mauricio Lucianelli Junior TIA:</li>
+              <li>Matheus Matsumoto TIA:</li>
+              <li>Vitor Ravacci Nunes de Oliveira TIA: 31817750</li>
+              <li>Pedro Joanini Cardoso TIA: 31852238</li>
+            </ul>
+          </p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Links para definições dos cursos</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Ciência da Computação</a></li>
+            <li><a class="white-text" href="#!">Sistema da Informação</a></li>
+            <li><a class="white-text" href="#!">Análise e Desenvolvimento de sistemas</a></li>
+            <li><a class="white-text" href="#!">Engenharia da Computação</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="purple-text text-lighten-5" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="{%static 'https://code.jquery.com/jquery-2.1.1.min.js'%}"></script>
+  <script src="{%static 'js/materialize.js'%}"></script>
+  <script src="{%static 'js/init.js'%}"></script>
+
+  </body>
+</html>

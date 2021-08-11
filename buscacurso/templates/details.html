@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Busca Curso</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{%static 'css/materialize.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{%static 'css/style.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{%static 'css/style.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+</head>
+<body>
+  <nav class="purple darken-3" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo">Busca Curso</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'index' %}">Página Inicial </a></li>
+        <li><a href="{% url 'index' %}">Lista de Cursos </a></li>
+        <li><a href="{% url 'course_list' %}">Suporte </a></li></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="{% url 'index' %}">Página Inicial <i class="material-icons">home</i></a></li>
+        <li><a href="{% url 'index' %}">Lista de Cursos <i class="material-icons">format_list_bulleted
+</i></a></li>
+        <li><a href="{% url 'index' %}">Suporte <i class="material-icons">people
+</i></a></li></a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <div class="col s12 m7">
+          <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <h1 class="header center">{{CURSO}}</h1>
+        <br><br>
+      </div>
+    </div>
+        <br>
+        <div class="card purple darken-3 z-depth-3">
+          <div class="card-image">
+            <img src="{%static 'images/curso-graduacao-ciencias-da-computacao-unisul.jpg'%}" class="image cover" alt="">
+            <span class="card-title">Descrição do Curso</span>
+          </div> 
+          <div class="card-content">
+              <p class="white-text">O Bacharelado em Ciência da Computação forma profissionais capazes de projetar e implementar softwares eficientes. O curso capacita o profissional para o desenvolvimento de hardware e softwares, de forma a estudar, desenvolver e implementar programas com objetivos muito amplos, como armazenamento e recuperação de dados, sistemas operacionais e de processamento de dados, banco de dados, redes de computadores, segurança de redes e de programação. 
+              </p>
+             <br>
+              <p class="white-text"> 
+              Seu principal objetivo é formar profissionais que usam o computador como atividade-fim, capazes de desenvolver ferramentas e otimizar recursos.
+              </p>
+            </div>
+          </div>
+        </div> 
+      <br><br>
+      <div class="card z-depth-3">
+        <div class="card-tabs">
+          <ul class="tabs tabs-fixed-width purple accent-3">
+            <li class="tab"><a class="white-text active" href="#test4">Estágio</a></li>
+            <li class="tab"><a class="white-text" href="#test5">Júnior</a></li>
+            <li class="tab"><a class="white-text" href="#test6">Pleno</a></li>
+            <li class="tab"><a class="white-text" href="#test7">Senior</a></li>
+          </ul>
+        </div>
+        <div class="card-content purple darken-3 white-text">
+          <div id="test4"><h5 class="center">{{salario_estag}}</h5></div>
+          <div id="test5"><h5 class="center">{{salario_junior}}</h5></div>
+          <div id="test6"><h5 class="center">{{salario_pleno}}</h5></div>
+          <div id="test7"><h5 class="center">{{salario_senior}}</h5></div>
+        </div>
+  </div>
+      <br><br>
+        <h4 class="header">Listagem de Instituições</h4>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Procure sua Faculdade">
+        <div class="card purple darken-3 z-depth-3 ">
+            <div class="tableFixHead-small">
+              <table id = "myTable" class="rensponsive-table centered white-text">
+                <thead class="header">
+                  <th class="purple accent-3">Instituição</th>
+                  <th class="purple accent-3">Duração</th>
+                  <th class="purple accent-3">Natureza</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Universidade Presbiteriana Mackenzie</td>
+                    <td>4 anos</td>
+                    <td>Privada</td>
+                  </tr>
+                  <tr>
+                    <td>Universidade São Paulo</td>
+                    <td>4 anos</td>
+                    <td>Pública</td>            
+                  <tr>
+                    <td>Universidade Federal de São Carlos</td>
+                    <td>5 anos</td>
+                    <td>Pública</td>
+                  </tr>
+                   <tr>
+                    <td>Universidade Federal de São Carlos</td>
+                    <td>5 anos</td>
+                    <td>Pública</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <br><br>
+  </div>
+
+  <footer class="page-footer purple darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Equipe do TCC</h5>
+          <p class="grey-text text-lighten-4">
+            <ul>
+              <li>Mauricio Lucianelli Junior TIA:</li>
+              <li>Matheus Matsumoto TIA:</li>
+              <li>Vitor Ravacci Nunes de Oliveira TIA: 31817750</li>
+              <li>Pedro Joanini Cardoso TIA: 31852238</li>
+            </ul>
+          </p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Links para definições dos cursos</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Ciência da Computação</a></li>
+            <li><a class="white-text" href="#!">Sistema da Informação</a></li>
+            <li><a class="white-text" href="#!">Análise e Desenvolvimento de Sistemas </a></li>
+            <li><a class="white-text" href="#!">Engenharia da Computação</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="purple-text text-lighten-5" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="{%static 'https://code.jquery.com/jquery-2.1.1.min.js'%}"></script>
+  <script src="{%static 'js/materialize.js'%}"></script>
+  <script src="{%static 'js/init.js'%}"></script>
+  <script src="{%static 'js/script.js'%}"></script>
+  </body>
+</html>
+
+
