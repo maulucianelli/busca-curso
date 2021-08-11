@@ -1,35 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Busca Curso</title>
-
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="{%static 'css/materialize.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="{%static 'css/style.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
-<body>
-  <nav class="purple darken-3" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo">BuscaCurso</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="{% url 'index' %}">Página Inicial </a></li>
-        <li><a href="{% url 'course_list' %}">Lista de Cursos </a></li>
-        <li><a href="{% url 'support' %}">Suporte </a></li></a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="{% url 'index' %}">Página Inicial <i class="material-icons">home</i></a></li>
-        <li><a href="{% url 'index' %}">Lista de Cursos <i class="material-icons">format_list_bulleted
-</i></a></li>
-        <li><a href="{% url 'index' %}">Suporte <i class="material-icons">people
-</i></a></li></a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+{% block content %}
+{%include 'partials/menu.html'%}
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
@@ -83,55 +55,7 @@
     </div>
     <br><br>
   </div>
+  {% include 'partials/footer.html' %}
 
-  <footer class="page-footer purple darken-3">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Equipe do TCC</h5>
-          <p class="grey-text text-lighten-4">
-            <ul>
-              <li>Mauricio Lucianelli Junior TIA:</li>
-              <li>Matheus Matsumoto TIA:</li>
-              <li>Vitor Ravacci Nunes de Oliveira TIA: 31817750</li>
-              <li>Pedro Joanini Cardoso TIA: 31852238</li>
-            </ul>
-          </p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Links para definições dos cursos</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Ciência da Computação</a></li>
-            <li><a class="white-text" href="#!">Sistema da Informação</a></li>
-            <li><a class="white-text" href="#!">Análise e Desenvolvimento de sistemas</a></li>
-            <li><a class="white-text" href="#!">Engenharia da Computação</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="purple-text text-lighten-5" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
-
-
-  <!--  Scripts-->
-  <script src="{%static 'https://code.jquery.com/jquery-2.1.1.min.js'%}"></script>
-  <script src="{%static 'js/materialize.js'%}"></script>
-  <script src="{%static 'js/init.js'%}"></script>
-
-  </body>
+  {% endblock %}
 </html>
