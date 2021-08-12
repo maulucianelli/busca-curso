@@ -7,6 +7,7 @@ class Curso(models.Model):
     organização_academica =  models.CharField(max_length=20)
     situacao_ies =models.CharField(max_length=20)
     duracao =models.IntegerField()
+    college_code = models.IntegerField()
 
 class Faculdade(models.Model):
     nome_curso = models.CharField(max_length=25)

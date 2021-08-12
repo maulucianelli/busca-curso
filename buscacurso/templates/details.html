@@ -14,21 +14,11 @@
         <div class="card purple darken-3 z-depth-3">
           <div class="card-image">
             <img src="{%static 'images/curso-graduacao-ciencias-da-computacao-unisul.jpg'%}" class="image cover" alt="">
-            {% if faculdades %}
-            {% for faculdade in faculdades %}
             <span class="card-title">Descrição do Curso - {{faculdade.nome_curso}} </span>
-            {% endfor %}
-            {% else %}
-            {% endif %}
-          </div> 
+        </div> 
           <div class="card-content">
               <p></p>
-              {% if faculdades %}
-              {% for faculdade in faculdades %}
               <p class="white-text">{{faculdade.descricao_curso}}</p>
-              {% endfor %}
-              {% else %}
-              {% endif %}
              <br>
             </div>
           </div>
@@ -45,18 +35,12 @@
                 <th class="purple accent-3">Senior</th>
               </thead>
               <tbody>
-                {% if faculdades %}
-                {% for faculdade in faculdades %}
                 <tr>
                   <td>R$ {{faculdade.salario_estag}} </td>
                   <td>R$ {{faculdade.salario_junior}} </td>
                   <td>R$ {{faculdade.salario_pleno}}</td>
                   <td>R$ {{faculdade.salario_senior}}</td>
-                  
                 </tr>
-                {% endfor %}
-                {% else %}
-                {% endif %}
               </tbody>
             </table>
           </div>
@@ -77,14 +61,16 @@
                 </thead>
                 <tbody>
                   {% if cursos %}
-                  {% for curso in cursos %}
-                  <tr>
-                    <td>{{curso.nome_ies}}</td>
-                    <td>{{curso.sigla_ies}}</td>
-                    <td>{{curso.duracao}} Semestres</td>
-                    <td>{{curso.categoria_administrativa}}</td>
-                  </tr>
-                  {% endfor %}
+                    {% for curso in cursos %}
+                    {% if curso.college_code == faculdade.id %}
+                      <tr>
+                        <td>{{curso.nome_ies}}</td>
+                        <td>{{curso.sigla_ies}}</td>
+                        <td>{{curso.duracao}} Semestres</td>
+                        <td>{{curso.categoria_administrativa}}</td>
+                      </tr>
+                      {% endif %}
+                    {% endfor %}
                   {% else %}
                   {% endif %}
                 </tbody>
