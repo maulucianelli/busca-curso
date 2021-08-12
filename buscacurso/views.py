@@ -25,10 +25,7 @@ def details(request,faculdade_id):
         'faculdades': faculdades
     }
 
-    dados = {
-        'cursos' :cursos,
-        'faculdades': faculdades
-    }
+
 
     return render(request, 'details.html',faculdade_a_exibir)
 
