@@ -7,7 +7,12 @@
         <div class="col s12 m7">
           <div class="section no-pad-bot" id="index-banner">
       <div class="container">
-        <h1 class="header center">{{CURSO}}</h1>
+        {% if cursos %}
+        {% for curso in cursos %}
+        <h1 class="header center">{{curso.nome_ies}}</h1>
+        {% endfor %}
+        {% else %}
+        {% endif %}
         <br><br>
       </div>
     </div>
@@ -38,10 +43,10 @@
           </ul>
         </div>
         <div class="card-content purple darken-3 white-text">
-          <div id="test4"><h5 class="center">{{salario_estag}}</h5></div>
-          <div id="test5"><h5 class="center">{{salario_junior}}</h5></div>
-          <div id="test6"><h5 class="center">{{salario_pleno}}</h5></div>
-          <div id="test7"><h5 class="center">{{salario_senior}}</h5></div>
+          <div id="test4"><h5 class="center">1000</h5></div>
+          <div id="test5"><h5 class="center">1000</h5></div>
+          <div id="test6"><h5 class="center">1000</h5></div>
+          <div id="test7"><h5 class="center">1000</h5></div>
         </div>
   </div>
       <br><br>
@@ -52,29 +57,22 @@
               <table id = "myTable" class="rensponsive-table centered white-text">
                 <thead class="header">
                   <th class="purple accent-3">Instituição</th>
+                  <th class="purple accent-3">Sigla</th>
                   <th class="purple accent-3">Duração</th>
                   <th class="purple accent-3">Natureza</th>
                 </thead>
                 <tbody>
+                  {% if cursos %}
+                  {% for curso in cursos %}
                   <tr>
-                    <td>Universidade Presbiteriana Mackenzie</td>
-                    <td>4 anos</td>
-                    <td>Privada</td>
+                    <td>{{curso.nome_ies}}</td>
+                    <td>{{curso.sigla_ies}}</td>
+                    <td>{{curso.duracao}} Semestres</td>
+                    <td>{{curso.categoria_administrativa}}</td>
                   </tr>
-                  <tr>
-                    <td>Universidade São Paulo</td>
-                    <td>4 anos</td>
-                    <td>Pública</td>            
-                  <tr>
-                    <td>Universidade Federal de São Carlos</td>
-                    <td>5 anos</td>
-                    <td>Pública</td>
-                  </tr>
-                   <tr>
-                    <td>Universidade Federal de São Carlos</td>
-                    <td>5 anos</td>
-                    <td>Pública</td>
-                  </tr>
+                  {% endfor %}
+                  {% else %}
+                  {% endif %}
                 </tbody>
               </table>
             </div>
