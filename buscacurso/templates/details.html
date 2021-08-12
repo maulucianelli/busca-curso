@@ -7,12 +7,6 @@
         <div class="col s12 m7">
           <div class="section no-pad-bot" id="index-banner">
       <div class="container">
-        {% if cursos %}
-        {% for curso in cursos %}
-        <h1 class="header center">{{curso.nome_ies}}</h1>
-        {% endfor %}
-        {% else %}
-        {% endif %}
         <br><br>
       </div>
     </div>
@@ -20,35 +14,55 @@
         <div class="card purple darken-3 z-depth-3">
           <div class="card-image">
             <img src="{%static 'images/curso-graduacao-ciencias-da-computacao-unisul.jpg'%}" class="image cover" alt="">
-            <span class="card-title">Descrição do Curso</span>
+            {% if faculdades %}
+            {% for faculdade in faculdades %}
+            <span class="card-title">Descrição do Curso - {{faculdade.nome_curso}} </span>
+            {% endfor %}
+            {% else %}
+            {% endif %}
           </div> 
           <div class="card-content">
-              <p class="white-text">O Bacharelado em Ciência da Computação forma profissionais capazes de projetar e implementar softwares eficientes. O curso capacita o profissional para o desenvolvimento de hardware e softwares, de forma a estudar, desenvolver e implementar programas com objetivos muito amplos, como armazenamento e recuperação de dados, sistemas operacionais e de processamento de dados, banco de dados, redes de computadores, segurança de redes e de programação. 
-              </p>
+              <p></p>
+              {% if faculdades %}
+              {% for faculdade in faculdades %}
+              <p class="white-text">{{faculdade.descricao_curso}}</p>
+              {% endfor %}
+              {% else %}
+              {% endif %}
              <br>
-              <p class="white-text"> 
-              Seu principal objetivo é formar profissionais que usam o computador como atividade-fim, capazes de desenvolver ferramentas e otimizar recursos.
-              </p>
             </div>
           </div>
         </div> 
       <br><br>
-      <div class="card z-depth-3">
-        <div class="card-tabs">
-          <ul class="tabs tabs-fixed-width purple accent-3">
-            <li class="tab"><a class="white-text active" href="#test4">Estágio</a></li>
-            <li class="tab"><a class="white-text" href="#test5">Júnior</a></li>
-            <li class="tab"><a class="white-text" href="#test6">Pleno</a></li>
-            <li class="tab"><a class="white-text" href="#test7">Senior</a></li>
-          </ul>
+      <h4 class="header">Media Salarial</h4>
+      <div class="card purple darken-3 z-depth-3 ">
+          <div class="tableFixHead-small">
+            <table id = "myTable" class="rensponsive-table centered white-text">
+              <thead class="header">
+                <th class="purple accent-3">Estagio</th>
+                <th class="purple accent-3">Junior</th>
+                <th class="purple accent-3">Pleno</th>
+                <th class="purple accent-3">Senior</th>
+              </thead>
+              <tbody>
+                {% if faculdades %}
+                {% for faculdade in faculdades %}
+                <tr>
+                  <td>R$ {{faculdade.salario_estag}} </td>
+                  <td>R$ {{faculdade.salario_junior}} </td>
+                  <td>R$ {{faculdade.salario_pleno}}</td>
+                  <td>R$ {{faculdade.salario_senior}}</td>
+                  
+                </tr>
+                {% endfor %}
+                {% else %}
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="card-content purple darken-3 white-text">
-          <div id="test4"><h5 class="center">1000</h5></div>
-          <div id="test5"><h5 class="center">1000</h5></div>
-          <div id="test6"><h5 class="center">1000</h5></div>
-          <div id="test7"><h5 class="center">1000</h5></div>
-        </div>
-  </div>
+        <br><br>
+        
       <br><br>
         <h4 class="header">Listagem de Instituições</h4>
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Procure sua Faculdade">

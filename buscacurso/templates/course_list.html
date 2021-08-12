@@ -16,10 +16,17 @@
                   <th class="purple accent-3">Area</th>
                 </thead>
                 <tbody>
+ 
+                  {% if faculdades %}
+                  {% for faculdade in faculdades %}
                   <tr>
-                    <td>Ciência da Computação</td>
-                    <td>Computação</td>
-                  </tr>
+                             <td> <a href="{% url 'details' %}"style="color:#51f542;">{{ faculdade.nome_curso }}</a></td>
+                             <td> {{ faculdade.area_curso }}</td>
+                  </tr>     
+                  {% endfor %}
+                  {% else %}
+                  {% endif %}
+         
                 </tbody>
               </table>
             </div>

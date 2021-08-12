@@ -8,3 +8,11 @@ class Curso(models.Model):
     situacao_ies =models.CharField(max_length=20)
     duracao =models.IntegerField()
 
+class Faculdade(models.Model):
+    nome_curso = models.CharField(max_length=25)
+    area_curso = models.CharField(max_length=25)
+    descricao_curso = models.TextField()
+    salario_estag = models.IntegerField()
+    salario_junior = models.IntegerField()
+    salario_pleno = models.IntegerField()
+    salario_senior = models.IntegerField()
