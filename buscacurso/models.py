@@ -1,6 +1,16 @@
 from django.db import models
 from postgres_copy import CopyManager
 
+from django.db import models
+from postgres_copy import CopyManager
+
+
+class Person(models.Model):
+    name = models.CharField(max_length=500)
+    number = models.IntegerField(null=True)
+    date = models.DateField(null=True)
+    objects = CopyManager()
+    
 class Curso(models.Model):
     sigla_ies =	models.CharField(max_length=5)
     nome_ies =	models.CharField(max_length=20)
