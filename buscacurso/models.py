@@ -1,15 +1,5 @@
 from django.db import models
 from postgres_copy import CopyManager
-
-from django.db import models
-from postgres_copy import CopyManager
-
-
-class Person(models.Model):
-    name = models.CharField(max_length=500)
-    number = models.IntegerField(null=True)
-    date = models.DateField(null=True)
-    objects = CopyManager()
     
 class Curso(models.Model):
     sigla_ies =	models.CharField(max_length=5)
@@ -31,57 +21,8 @@ class Faculdade(models.Model):
 
 
 class Curso_Faculdade(models.Model):
-    codigo_curso = models.IntegerField()
-    Código_da_IES = models.IntegerField()	
-    Sigla_da_IES	= models.CharField(max_length=25)
-    Nome_da_IES	= models.CharField(max_length=100)
-    Categoria_Administrativa= models.CharField(max_length=100)	
-    Organização_Acadêmica	= models.CharField(max_length=100)
-    Situaçao_da_IES	= models.CharField(max_length=100)
-    Sinalização_da_IES	= models.CharField(max_length=100)
-    Código_do_Curso	= models.IntegerField()	
-    Nome_do_Curso	= models.CharField(max_length=100)
-    Grau	= models.CharField(max_length=100)
-    Modalidade	= models.CharField(max_length=100)
-    Situação_do_Curso	= models.CharField(max_length=100)
-    Qt_Vagas_Autorizadas= models.IntegerField()	
-    Carga_Horária	= models.IntegerField()
-    Tipo_de_Periodicidade	= models.CharField(max_length=100)
-    Integralização_Turno_Integral	= models.CharField(max_length=100)
-    Quantitativo_de_Vagas_Integral	= models.IntegerField()
-    Integralização_Turno_Matutino	= models.CharField(max_length=100)
-    Quantitativo_de_Vagas_Matutino	= models.IntegerField()
-    Integralização_Turno_Vespertino	= models.CharField(max_length=100)
-    Quantitativo_de_Vagas_Vespertino	= models.IntegerField()
-    Integralização_Turno_Noturno	= models.CharField(max_length=100)
-    Quantitativo_de_Vagas_Noturno	= models.IntegerField()
-    Sinalização_do_Curso	= models.CharField(max_length=100)
-    Código_do_Endereço	= models.IntegerField()
-    Nome_do_Campus	= models.CharField(max_length=100)
-    Endereço	= models.CharField(max_length=100)
-    Número_Endereço	= models.IntegerField()
-    Complemento	= models.CharField(max_length=100)
-    Bairro	= models.CharField(max_length=100)
-    Código_do_Município=  models.IntegerField()
-    Município= models.CharField(max_length=100)	
-    UF	= models.CharField(max_length=100)
-    Início_Funcionamento	= models.CharField(max_length=100)
-    Data_Ato_de_Criação	= models.DateField()
-    Valor_CC	= models.IntegerField()
-    Ano_CC	= models.IntegerField()
-    CPC_Faixa	= models.IntegerField()
-    CPC_Contínuo	= models.IntegerField()
-    CPC_Ano	= models.IntegerField()
-    Valor_IDD	= models.IntegerField()
-    IDD_Ano	= models.IntegerField()
-    Valor_ENADE	= models.IntegerField()
-    ENADE_Ano	= models.IntegerField()
-    Código_Rótulo_CINE	= models.CharField(max_length=100)
-    Rótulo_CINE	= models.CharField(max_length=100)
-    Código_Área_Detalhada_CINE	= models.IntegerField()
-    Área_Detalhada_CINE	= models.CharField(max_length=100)
-    Código_Área_Específica_CINE	= models.IntegerField()
-    Área_Específica_CINE	= models.CharField(max_length=100)
-    Código_Área_Geral_CINE	= models.IntegerField()
-    Área_Geral_CINE= models.CharField(max_length=100)
-    objects = CopyManager()
+    codigo_curso = models.IntegerField(null=True)	
+    Sigla_da_IES	= models.CharField(max_length=500)
+    Nome_da_IES	= models.CharField(max_length=500)
+    Categoria_Administrativa= models.CharField(max_length=500)	
+    Organizacao_Academica	= models.CharField(max_length=500)
