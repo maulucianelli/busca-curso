@@ -1,5 +1,4 @@
 from django.db import models
-from postgres_copy import CopyManager
     
 class Curso(models.Model):
     sigla_ies =	models.CharField(max_length=5)
