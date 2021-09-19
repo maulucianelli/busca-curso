@@ -1,33 +1,14 @@
 import csv
-from os import EX_SOFTWARE
+import os
 
 from django.core.management.base import BaseCommand, CommandError
-from django.db import DefaultConnectionProxy
+
+
 #ajustar modelo
-from buscacurso.models import Cursos
+from buscacurso.models import Curso, Curso_teste
 
 class Command(BaseCommand):
     """
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-
-    1
-    1
     """ 
 
     def __init__(self, *args, **kwargs):
@@ -36,13 +17,11 @@ class Command(BaseCommand):
         self.file_erros_output_csv = None
         self.headers_required = {
             #inserir nome dos headers agui
-            "first_name",
-            "last_name",
+            "codigo_curso",
+            "codigo_ies",
+            "sigla_ies",
+            "nome_ies"
         }
-
-
-
-
         super().__init__(*args, **kwargs)
 
     def add_arguments(self, parser):
@@ -82,12 +61,11 @@ class Command(BaseCommand):
                     row[0]
                     data = {
                         #colunas
-                        "first_name": row[headers["first_name"]],
-                        "last_name": row[headers["last_name"]],
-
-
-
-
+                        #codigo_curso;codigo_ies;sigla_ies;nome_ies
+                        "codigo_curso": row[headers["codigo_curso"]],
+                        "codigo_ies": row[headers["codigo_ies"]],
+                        "sigla_ies": row[headers["sigla_ies"]],
+                        "nome_ies": row[headers["nome_ies"]],
                     }
 
 
@@ -95,14 +73,14 @@ class Command(BaseCommand):
 
 
                     #ALTERAR
-                    curso = Cursos(nome = first_name, email=email)
+                    curso = Curso_teste(codigo_curso=codigo_curso,codigo_ies=codigo_ies,sigla_ies=sigla_ies,nome_ies=nome_ies)
                     curso.save()
 
-                    curso = Cursos(**data)
+                    curso = Curso_teste(**data)
                     
-                    customer_list.append(customer)
+                    courses_list.append(curso)
                 
-                Customer.objects.bulk_create(customer_list)
+                Curso_teste.objects.bulk_create(courses_list)
 
             self.save_errors_into_csv()
             

@@ -25,3 +25,9 @@ class Curso_Faculdade(models.Model):
     Nome_da_IES	= models.CharField(max_length=500)
     Categoria_Administrativa= models.CharField(max_length=500)	
     Organizacao_Academica	= models.CharField(max_length=500)
+
+class Curso_teste(models.Model):
+    codigo_curso = models.IntegerField()
+    codigo_ies= models.IntegerField()
+    sigla_ies=models.CharField(max_length=500)
+    nome_ies =models.CharField(max_length=500)
