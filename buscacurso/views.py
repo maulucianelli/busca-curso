@@ -1,12 +1,12 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Curso, Faculdade
+from .models import Curso, Curso_teste, Faculdade
 
 def index (request):
     return render(request, 'index.html')
 
 #passo 2 criar função
 def course_list(request):
-    faculdades= Faculdade.objects.all
+    faculdades= Curso_teste.objects.all
 
     dados = {
         'faculdades' :faculdades

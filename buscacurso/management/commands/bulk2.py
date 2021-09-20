@@ -1,11 +1,11 @@
 import csv
 import os
-
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
 from django.core.management.base import BaseCommand, CommandError
-
-
+csvfile = os.path.join(BASE_DIR,'commands\dbtcc.csv')
 #ajustar modelo
-from buscacurso.models import Curso, Curso_teste
+from buscacurso.models import Curso_teste
 
 class Command(BaseCommand):
     """
@@ -39,24 +39,20 @@ class Command(BaseCommand):
         )
         
     def handle(self, *args, **kwargs):
-        self.file_csv = kwargs["dbtcc.CSV"]
         self.file_error_output_csv = kwargs["csv_err_output"]
         #custom array
         courses_list = []
 
         try: 
-            with open(self.file_csv) as file:
+            with open(csvfile, encoding='utf-8') as file:
                 csv_reader = csv.reader(
                     file, delimiter= ",", quotechar='"'
                 )
                 csv_headers = next(csv_reader)
 
                 headers = {i: csv_headers.index(i) for i in csv_headers}
-
-
-                if not self.validate_required_headers(headers):
-                    return
-                
+#                if not self.validate_required_headers(headers):
+ #                   return
                 for row in csv_reader:
                     row[0]
                     data = {
@@ -86,22 +82,11 @@ class Command(BaseCommand):
             
         except FileNotFoundError:
             self.stdout.write(
-                self.style.ERROR(f"File not Found: {self.file_csv}")
+                self.style.ERROR(f"File not Found: {'dbtcc.CSV'}")
             )
 
-
-
-
-
-
-
-    def validate_required_headers(self, headers):
+'''    def validate_required_headers(self, headers):
         """
-
-
-
-
-
 
         """
         if all(column in headers for column in self.headers_required):
@@ -119,7 +104,7 @@ class Command(BaseCommand):
     def save_errors_into_csv(self):
         with open(self.file_error_output_csv, "w+") as file:
             file.write(self.log)
-
+'''
 
 
 

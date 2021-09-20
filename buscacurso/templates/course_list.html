@@ -20,8 +20,8 @@
                   {% if faculdades %}
                   {% for faculdade in faculdades %}
                   <tr>
-                             <td> <a href="{% url 'details' faculdade.id %}"style="color:#51f542;">{{ faculdade.nome_curso }}</a></td>
-                             <td> {{ faculdade.area_curso }}</td>
+                             <td> <a href="{% url 'details' faculdade.id %}"style="color:#51f542;">{{ faculdade.nome_ies }}</a></td>
+                             <td> {{ faculdade.sigla_ies }}</td>
                   </tr>     
                   {% endfor %}
                   {% else %}

@@ -1,5 +1,6 @@
 from django.db import models
-    
+
+
 class Curso(models.Model):
     sigla_ies =	models.CharField(max_length=5)
     nome_ies =	models.CharField(max_length=20)
