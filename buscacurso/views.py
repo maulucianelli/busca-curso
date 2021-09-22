@@ -5,8 +5,16 @@ def index (request):
     return render(request, 'index.html')
 
 #passo 2 criar função
+##def course_list(request):
+#    faculdades= Curso_teste.objects.all
+#
+ #   dados = {
+  #      'faculdades' :faculdades
+   # }
+
+    return render(request, 'course_list.html',dados)
 def course_list(request):
-    faculdades= Curso_teste.objects.all
+    faculdades= Faculdade.objects.all
 
     dados = {
         'faculdades' :faculdades
@@ -17,9 +25,11 @@ def course_list(request):
 def details(request,faculdade_id):
     cursos = Curso.objects.all
     faculdades = Faculdade.objects.all
+    curso_teste = Curso_teste.objects.all
     detalhes = get_object_or_404(Faculdade, pk = faculdade_id)
 
     faculdade_a_exibir ={
+        'curso_teste':curso_teste,
         'faculdade' : detalhes,
         'cursos' :cursos,
         'faculdades': faculdades
