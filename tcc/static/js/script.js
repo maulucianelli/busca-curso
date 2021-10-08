@@ -1,5 +1,26 @@
 var el = document.querySelector('.tabs');
 var instance = M.Tabs.init(el, {});
+
+callAPI("https://limitless-shore-04114.herokuapp.com/https://api.educamaisbrasil.com.br/api/Curso/ConsultarSalarioPorteCargo?cursoUrl=ciencias-da-computacao", function(response){showSalary(response)});
+function callAPI(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function(){
+        if(xhr.status === 200){
+            callback(xhr.response)
+        }else{
+            console.log("Erro ao acessar a API")
+        }
+    }
+    xhr.send();
+}
+
+function showSalary(response){
+  document.getElementById("salario_junior").innerText = response[0].SALARIO_TRAINEE
+  console.log("heloo")
+}
+
 function myFunction(){
   var input, filter, table, tr, td, i, txtValue;
   input =  document.getElementById("myInput");

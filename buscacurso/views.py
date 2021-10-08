@@ -1,5 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from .models import Curso, Curso_teste, Faculdade
+import requests
+from django.shortcuts import render
 
 def index (request):
     return render(request, 'index.html')
@@ -41,3 +43,5 @@ def details(request,faculdade_id):
 
 def support(request):
     return render(request, 'support.html')
+
+
