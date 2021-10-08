@@ -17,7 +17,9 @@ function callAPI(url, callback) {
 }
 
 function showSalary(response){
-  document.getElementById("salario_junior").innerText = response[0].SALARIO_TRAINEE
+  document.getElementById("salario_junior").innerText += response[1].SALARIO_TRAINEE
+  document.getElementById("salario_pleno").innerText += response[1].SALARIO_PLENO
+  document.getElementById("salario_senior").innerText += response[1].SALARIO_SENIOR
   console.log("heloo")
 }
 
