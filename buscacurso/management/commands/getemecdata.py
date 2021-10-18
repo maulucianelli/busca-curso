@@ -1,14 +1,19 @@
 # -*- coding: utf-8 -*-
-
 from glob import glob
 import json
 import os
 
 from django.core.management.base import BaseCommand
+
+# o que é emec no projeto dele?api? o que é institutiinpom
 from emec import Institution
 
-from Agvest import settings
-from AgvestApp.utils.functions import Status
+#from Agvest import settings ´porque importa setttings?
+from tcc import settings
+
+
+#from AgvestApp.utils.functions import Status  o que tem de importante nos status?
+#from tcc.utils.functions import Status
 
 
 class Command(BaseCommand):
@@ -64,7 +69,7 @@ class Command(BaseCommand):
         
         try:
             self.write('Starting the collection of data of the IES %s...' % str(code_ies), status=Status.info)
-            filename = os.path.join(settings.BASE_DIR, 'AgvestApp/emec_data/output/', str(code_ies) + '.json')
+            filename = os.path.join(settings.BASE_DIR, 'buscacurso/emec_data/output/', str(code_ies) + '.json')
             
             ies.parse()            
             ies.write_json(filename)
@@ -76,7 +81,7 @@ class Command(BaseCommand):
     
     def get_ies_from_path(self):
         
-        input_path = os.path.join(settings.BASE_DIR, 'AgvestApp/emec_data/input/')
+        input_path = os.path.join(settings.BASE_DIR, 'buscacurso/emec_data/input/')
         
         try:
             self.write('Starting the collection of data of the all files\n\n', status=Status.info)
@@ -117,7 +122,7 @@ class Command(BaseCommand):
                     error_ies = []
                 
                 # save to file
-                output_path = os.path.join(settings.BASE_DIR, 'AgvestApp/emec_data/output/', UF + '.json')
+                output_path = os.path.join(settings.BASE_DIR, 'buscacurso/emec_data/output/', UF + '.json')
                 with open(output_path, 'w') as outfile:
                     json.dump(item, outfile, indent=4)
                     
@@ -128,7 +133,7 @@ class Command(BaseCommand):
                 
                 self.write('Save to file "errors.json" found errors in the parsing', True, Status.info)
     
-                output_path = os.path.join(settings.BASE_DIR, 'AgvestApp/emec_data/output/', 'errors.json')
+                output_path = os.path.join(settings.BASE_DIR, 'buscacurso/emec_data/output/', 'errors.json')
                 with open(output_path, 'w') as outfile:
                     json.dump(errors, outfile, indent=4)
             
