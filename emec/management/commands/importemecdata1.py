@@ -65,8 +65,9 @@ class Command(BaseCommand):
             uf {String}:    uf name for open json file
         """
         
-        filename = os.path.join(settings.BASE_DIR, 'buscacurso\emec_data\output', uf.upper() + '.json')
-        print(filename)
+        #filename = os.path.join(settings.BASE_DIR, 'emec/emec_data/output/', uf.upper() + '.json')
+        filename = os.path.join(settings.BASE_DIR, 'emec/data/output/',  uf.upper() + '.json')
+        print("filename:", filename)
         # check if file exists
         if os.path.exists(filename):
             
@@ -75,13 +76,14 @@ class Command(BaseCommand):
             # open file and read json                
             with open(filename, encoding='utf-8') as data_file:
                 data = json.loads(data_file.read())
+                print (data)
 
             # start time            
             start = time.time()
             
             with transaction.atomic():
-            
-                ies_list = data[uf.upper()]
+                uf='SP'
+                ies_list = data[uf]
                 for ies in ies_list:
                     
                     # cleaning mask cnpj
@@ -212,8 +214,8 @@ class Command(BaseCommand):
         
         self.write('Starting emec data import from all json files in the folder\n', status=Status.info)
         
-        path = os.path.join(settings.BASE_DIR, 'buscacurso\emec_data\output')
-        print(path)
+        path = os.path.join(settings.BASE_DIR, 'emec/data/output/')
+        print("path:", path)
         for filename in glob(path + '*.json'):
             uf = filename.replace(path, '').replace('.json', '')
             self.import_data_from_uf(uf)
