@@ -7,7 +7,8 @@ import os
 from django.core.management.base import BaseCommand
 
 # o que é emec no projeto dele?api? o que é institutiinpom
-from emec import Institution
+from emec.emec import Institution
+
 
 #from Agvest import settings ´porque importa setttings?
 from tcc import settings

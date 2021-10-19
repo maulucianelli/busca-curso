@@ -1,0 +1,230 @@
+{
+    "C:\\USERS\\MAURI\\ONEDRIVE\\DOCUMENTOS\\GITHUB\\BUSCA-CURSO\\BUSCACURSO/EMEC_DATA/INPUT\\SP": [
+        {
+            "mantenedora": "(31) FUNDACAO DE EDUCACAO PARA O TRABALHO DE MINAS GERAIS",
+            "cnpj": "17.319.831/0001-23",
+            "natureza_juridica": "Funda\u00e7\u00e3o Estadual ou do Distrito Federal",
+            "nome_da_ies": "(31) CENTRO DE EDUCA\u00c7\u00c3O T\u00c9CNICA DA UTRAMIG - UTRAMIG",
+            "situacao": "Ativa",
+            "endereco": "Avenida Afonso Pena",
+            "no": "3400",
+            "cep": "30130-009",
+            "bairro": "CRUZEIRO",
+            "municipio": "Belo Horizonte",
+            "uf": "MG",
+            "organizacao_academica": "Faculdade",
+            "sitio": "www.utramig.mg.gov.br",
+            "categoria_administrativa": "P\u00fablica Estadual",
+            "tipo_de_credenciamento": "Presencial",
+            "code_ies": 31,
+            "campus": [
+                {
+                    "code": "657690",
+                    "city": "Belo Horizonte",
+                    "uf": "MG"
+                }
+            ],
+            "courses": [
+                {
+                    "codigo": "UFJPR1JBTUEgRVNQRUNJQUwgREUgRk9STUHDh8ODTyBQRURBR8OTR0lDQSBERSBET0NFTlRFUw==",
+                    "codigo_campus": "2346",
+                    "nome": "PROGRAMA ESPECIAL DE FORMA\u00c7\u00c3O PEDAG\u00d3GICA DE DOCENTES",
+                    "tipo_grad": "(2346) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "560 horas",
+                    "periodo": "Integral - 6 semestres",
+                    "nome_camp": "CAMPUS - BELO HORIZONTE - CRUZEIRO",
+                    "municipio": "Belo Horizonte",
+                    "uf": "MG"
+                },
+                {
+                    "codigo": "UFJPR1JBTUEgRVNQRUNJQUwgREUgRk9STUHDh8ODTyBQRURBR8OTR0lDQSBERSBET0NFTlRFUw==",
+                    "codigo_campus": "25285",
+                    "nome": "PROGRAMA ESPECIAL DE FORMA\u00c7\u00c3O PEDAG\u00d3GICA DE DOCENTES",
+                    "tipo_grad": "(25285) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "560 horas",
+                    "periodo": "Integral - 6 semestres",
+                    "nome_camp": "CAMPUS - BELO HORIZONTE - CRUZEIRO",
+                    "municipio": "Belo Horizonte",
+                    "uf": "MG"
+                },
+                {
+                    "codigo": "UFJPR1JBTUEgRVNQRUNJQUwgREUgRk9STUHDh8ODTyBQRURBR8OTR0lDQSBERSBET0NFTlRFUw==",
+                    "codigo_campus": "51033",
+                    "nome": "PROGRAMA ESPECIAL DE FORMA\u00c7\u00c3O PEDAG\u00d3GICA DE DOCENTES",
+                    "tipo_grad": "(51033) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "560 horas",
+                    "periodo": "Integral - 6 semestres",
+                    "nome_camp": "CAMPUS - BELO HORIZONTE - CRUZEIRO",
+                    "municipio": "Belo Horizonte",
+                    "uf": "MG"
+                },
+                {
+                    "codigo": "UFJPR1JBTUEgRVNQRUNJQUwgREUgRk9STUHDh8ODTyBQRURBR8OTR0lDQSBERSBET0NFTlRFUw==",
+                    "codigo_campus": "51034",
+                    "nome": "PROGRAMA ESPECIAL DE FORMA\u00c7\u00c3O PEDAG\u00d3GICA DE DOCENTES",
+                    "tipo_grad": "(51034) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "560 horas",
+                    "periodo": "Integral - 6 semestres",
+                    "nome_camp": "CAMPUS - BELO HORIZONTE - CRUZEIRO",
+                    "municipio": "Belo Horizonte",
+                    "uf": "MG"
+                },
+                {
+                    "codigo": "UFJPR1JBTUEgRVNQRUNJQUwgREUgRk9STUHDh8ODTyBQRURBR8OTR0lDQSBERSBET0NFTlRFUw==",
+                    "codigo_campus": "51035",
+                    "nome": "PROGRAMA ESPECIAL DE FORMA\u00c7\u00c3O PEDAG\u00d3GICA DE DOCENTES",
+                    "tipo_grad": "(51035) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "560 horas",
+                    "periodo": "Integral - 6 semestres",
+                    "nome_camp": "CAMPUS - BELO HORIZONTE - CRUZEIRO",
+                    "municipio": "Belo Horizonte",
+                    "uf": "MG"
+                },
+                {
+                    "codigo": "UFJPR1JBTUEgRVNQRUNJQUwgREUgRk9STUHDh8ODTyBQRURBR8OTR0lDQSBERSBET0NFTlRFUw==",
+                    "codigo_campus": "51036",
+                    "nome": "PROGRAMA ESPECIAL DE FORMA\u00c7\u00c3O PEDAG\u00d3GICA DE DOCENTES",
+                    "tipo_grad": "(51036) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "560 horas",
+                    "periodo": "Integral - 6 semestres",
+                    "nome_camp": "CAMPUS - BELO HORIZONTE - CRUZEIRO",
+                    "municipio": "Belo Horizonte",
+                    "uf": "MG"
+                }
+            ]
+        },
+        {
+            "mantenedora": "(56) AUTARQUIA EDUCACIONAL DA MATA SUL",
+            "cnpj": "08.653.818/0001-15",
+            "natureza_juridica": "Autarquia Municipal",
+            "representante_legal": "RUDEMSON CANDIDO DA COSTA ( PRESIDENTE )",
+            "nome_da_ies": "(72) FACULDADE DE FORMA\u00c7\u00c3O DE PROFESSORES DA MATA SUL - FAMASUL",
+            "situacao": "Ativa",
+            "endereco": "Br 101 Km 186 Sul",
+            "no": "S/N",
+            "cep": "55540-000",
+            "bairro": "ENGENHO SAO MANOEL",
+            "municipio": "Palmares",
+            "uf": "PE",
+            "telefone": "081-3661-0625",
+            "fax": "81-36610625",
+            "organizacao_academica": "Faculdade",
+            "sitio": "www.famasul.edu.br",
+            "categoria_administrativa": "Especial",
+            "reitor/dirigente_principal": "JACQUELINE OLIVEIRA DE MELO GOMES",
+            "tipo_de_credenciamento": "Presencial",
+            "code_ies": 72,
+            "campus": [
+                {
+                    "code": "657714",
+                    "city": "Palmares",
+                    "uf": "PE"
+                }
+            ],
+            "courses": [
+                {
+                    "codigo": "Q0nDik5DSUFTIEJJT0zDk0dJQ0FT",
+                    "codigo_campus": "85762",
+                    "nome": "CI\u00caNCIAS BIOL\u00d3GICAS",
+                    "tipo_grad": "(85762) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "3100 horas",
+                    "periodo": "Noturno - 8 semestres",
+                    "nome_camp": "UNIDADE  - PALMARES - ENGENHO SAO MANOEL",
+                    "municipio": "Palmares",
+                    "uf": "PE"
+                },
+                {
+                    "codigo": "R0VPR1JBRklB",
+                    "codigo_campus": "3602",
+                    "nome": "GEOGRAFIA",
+                    "tipo_grad": "(3602) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "3030 horas",
+                    "periodo": "Noturno - 8 semestres",
+                    "nome_camp": "UNIDADE  - PALMARES - ENGENHO SAO MANOEL",
+                    "municipio": "Palmares",
+                    "uf": "PE"
+                },
+                {
+                    "codigo": "SElTVMOTUklB",
+                    "codigo_campus": "3603",
+                    "nome": "HIST\u00d3RIA",
+                    "tipo_grad": "(3603) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "3000 horas",
+                    "periodo": "Noturno - 8 semestres",
+                    "nome_camp": "UNIDADE  - PALMARES - ENGENHO SAO MANOEL",
+                    "municipio": "Palmares",
+                    "uf": "PE"
+                },
+                {
+                    "codigo": "TEVUUkFTIC0gSU5HTMOKUw==",
+                    "codigo_campus": "25692",
+                    "nome": "LETRAS - INGL\u00caS",
+                    "tipo_grad": "(25692) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "3000 horas",
+                    "periodo": "Noturno - 8 semestres",
+                    "nome_camp": "UNIDADE  - PALMARES - ENGENHO SAO MANOEL",
+                    "municipio": "Palmares",
+                    "uf": "PE"
+                },
+                {
+                    "codigo": "TEVUUkFTIC0gUE9SVFVHVcOKUyBFIElOR0zDilM=",
+                    "codigo_campus": "3601",
+                    "nome": "LETRAS - PORTUGU\u00caS E INGL\u00caS",
+                    "tipo_grad": "(3601) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "3000 horas",
+                    "periodo": "Noturno - 8 semestres",
+                    "nome_camp": "UNIDADE  - PALMARES - ENGENHO SAO MANOEL",
+                    "municipio": "Palmares",
+                    "uf": "PE"
+                },
+                {
+                    "codigo": "TUFURU3DgVRJQ0E=",
+                    "codigo_campus": "85760",
+                    "nome": "MATEM\u00c1TICA",
+                    "tipo_grad": "(85760) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "3140 horas",
+                    "periodo": "Noturno - 8 semestres",
+                    "nome_camp": "UNIDADE  - PALMARES - ENGENHO SAO MANOEL",
+                    "municipio": "Palmares",
+                    "uf": "PE"
+                },
+                {
+                    "codigo": "UEVEQUdPR0lB",
+                    "codigo_campus": "1178271",
+                    "nome": "PEDAGOGIA",
+                    "tipo_grad": "(1178271) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "3220 horas",
+                    "periodo": "Integral - 6 semestres",
+                    "nome_camp": "UNIDADE  - PALMARES - ENGENHO SAO MANOEL",
+                    "municipio": "Palmares",
+                    "uf": "PE"
+                },
+                {
+                    "codigo": "UVXDjU1JQ0E=",
+                    "codigo_campus": "85764",
+                    "nome": "QU\u00cdMICA",
+                    "tipo_grad": "(85764) Licenciatura",
+                    "modalidade": "Educa\u00e7\u00e3o Presencial",
+                    "tempo": "3075 horas",
+                    "periodo": "Noturno - 8 semestres",
+                    "nome_camp": "UNIDADE  - PALMARES - ENGENHO SAO MANOEL",
+                    "municipio": "Palmares",
+                    "uf": "PE"
+                }
+            ]
+        }
+    ]
+}
