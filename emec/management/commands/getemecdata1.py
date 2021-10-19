@@ -2,6 +2,7 @@
 from glob import glob
 import json
 import os
+from pathlib import Path
 
 
 from django.core.management.base import BaseCommand
@@ -71,8 +72,7 @@ class Command(BaseCommand):
         
         try:
             self.write('Starting the collection of data of the IES %s...' % str(code_ies), status=Status.info)
-            filename = os.path.join(settings.BASE_DIR, 'buscacurso/emec_data/output/', str(code_ies) + '.json')
-            
+            filename = filename = os.path.join(settings.BASE_DIR, 'emec/data/output/', str(code_ies) + '.json')
             ies.parse()            
             ies.write_json(filename)
             
@@ -83,8 +83,8 @@ class Command(BaseCommand):
     
     def get_ies_from_path(self):
         
-        input_path = os.path.join(settings.BASE_DIR, 'buscacurso/emec_data/input/')
-        
+        input_path = os.path.join(settings.BASE_DIR, 'emec/data/input/')
+        print("\n\ninput: ", input_path)
         try:
             self.write('Starting the collection of data of the all files\n\n', status=Status.info)
             
@@ -123,11 +123,14 @@ class Command(BaseCommand):
                     errors[UF] = error_ies        
                     error_ies = []
                 
-                # save to file
-                output_path = os.path.join(settings.BASE_DIR, 'buscacurso/emec_data/output/', UF + '.json')
+            # save to file
+                output_path = os.path.join(settings.BASE_DIR, 'emec/data/output/', "SP1" + '.json')
                 with open(output_path, 'w', encoding='utf8') as outfile:
                     json.dump(item, outfile, indent=4, ensure_ascii=False)
-                                        
+                        
+                    print(output_path)     
+                    print("")
+                    print(UF)               
                 self.write('Finishing state data collection\n\n', status=Status.info)
             
             # save to file json with errors of parsing
@@ -135,7 +138,7 @@ class Command(BaseCommand):
                 
                 self.write('Save to file "errors.json" found errors in the parsing', True, Status.info)
     
-                output_path = os.path.join(settings.BASE_DIR, 'buscacurso/emec_data/output/', 'errors.json')
+                output_path = os.path.join(settings.BASE_DIR, 'emec/data/output/', 'errors.json')
                 with open(output_path, 'w', encoding='utf8') as outfile:
                     json.dump(errors, outfile, indent=4, ensure_ascii=False)
             

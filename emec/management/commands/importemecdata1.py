@@ -10,18 +10,20 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
-from Agvest import settings
-from AgvestApp.models.courses import Courses
-from AgvestApp.models.courses_institution import CoursesInstitution
-from AgvestApp.models.institution import Institution
-from AgvestApp.models.maintainer import Maintainer
-from AgvestApp.utils.functions import Status, cleaning_cnpj, only_numerics 
+from tcc import settings
+
+from buscacurso.models import Courses
+from buscacurso.models import CoursesInstitution
+from buscacurso.models import Institution
+from buscacurso.models import Maintainer
+
+from buscacurso.utils.functions import Status, cleaning_cnpj, only_numerics 
 
 
 class Command(BaseCommand):
 
     verbose = False
-    help = 'Import e-MEC data for database Agvest.'
+    help = 'Import e-MEC data for database Buscacurso.'
 
     def add_arguments(self, parser):
         
@@ -63,16 +65,16 @@ class Command(BaseCommand):
             uf {String}:    uf name for open json file
         """
         
-        filename = os.path.join(settings.BASE_DIR, 'AgvestApp/emec_data/output', uf.upper() + '.json')
-        
+        filename = os.path.join(settings.BASE_DIR, 'buscacurso\emec_data\output', uf.upper() + '.json')
+        print(filename)
         # check if file exists
         if os.path.exists(filename):
             
             self.write('Starting emec data import from json file', status=Status.info)
         
             # open file and read json                
-            with open(filename) as data_file:
-                data = json.load(data_file, 'utf-8')
+            with open(filename, encoding='utf-8') as data_file:
+                data = json.loads(data_file.read())
 
             # start time            
             start = time.time()
@@ -210,7 +212,8 @@ class Command(BaseCommand):
         
         self.write('Starting emec data import from all json files in the folder\n', status=Status.info)
         
-        path = os.path.join(settings.BASE_DIR, 'AgvestApp/emec_data/output/')
+        path = os.path.join(settings.BASE_DIR, 'buscacurso\emec_data\output')
+        print(path)
         for filename in glob(path + '*.json'):
             uf = filename.replace(path, '').replace('.json', '')
             self.import_data_from_uf(uf)
