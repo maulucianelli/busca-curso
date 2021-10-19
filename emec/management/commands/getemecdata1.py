@@ -84,7 +84,6 @@ class Command(BaseCommand):
     def get_ies_from_path(self):
         
         input_path = os.path.join(settings.BASE_DIR, 'emec/data/input/')
-        print("\n\ninput: ", input_path)
         try:
             self.write('Starting the collection of data of the all files\n\n', status=Status.info)
             
@@ -93,9 +92,9 @@ class Command(BaseCommand):
 
             for filename in glob(input_path + '*.csv'):
                 
-                UF = filename.replace(input_path,'').replace('.csv','').upper()
+                aux = input_path.replace('\\', '').replace('/','')
+                UF = filename.replace('\\', '').replace('/','').replace(aux,'').replace('.csv','').upper()
                 self.write('Initiating data collection from the state %s' % UF, status=Status.info)
-                
                 file_open = open(filename)
                 lines = file_open.readlines()
                 
@@ -124,13 +123,9 @@ class Command(BaseCommand):
                     error_ies = []
                 
             # save to file
-                output_path = os.path.join(settings.BASE_DIR, 'emec/data/output/', "SP1" + '.json')
+                output_path = os.path.join(settings.BASE_DIR, 'emec/data/output/', UF + '.json')
                 with open(output_path, 'w', encoding='utf8') as outfile:
-                    json.dump(item, outfile, indent=4, ensure_ascii=False)
-                        
-                    print(output_path)     
-                    print("")
-                    print(UF)               
+                    json.dump(item, outfile, indent=4, ensure_ascii=False)       
                 self.write('Finishing state data collection\n\n', status=Status.info)
             
             # save to file json with errors of parsing
