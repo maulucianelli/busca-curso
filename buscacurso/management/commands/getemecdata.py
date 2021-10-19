@@ -3,17 +3,18 @@ from glob import glob
 import json
 import os
 
+
 from django.core.management.base import BaseCommand
 
 # o que é emec no projeto dele?api? o que é institutiinpom
-from emec import Institution
+from buscacurso import Institution
 
 #from Agvest import settings ´porque importa setttings?
 from tcc import settings
 
 
 #from AgvestApp.utils.functions import Status  o que tem de importante nos status?
-#from tcc.utils.functions import Status
+from buscacurso.utils.functions import Status
 
 
 class Command(BaseCommand):
