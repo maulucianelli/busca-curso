@@ -17,11 +17,12 @@
                 </thead>
                 <tbody>
  
-                  {% if faculdades %}
-                  {% for faculdade in faculdades %}
+                  {% if courses_inst %}
+                  {% for courses_i in courses_inst %}
                   <tr>
-                             <td> <a href="{% url 'details' faculdade.id %}"style="color:#51f542;">{{ faculdade.nome_curso }}</a></td>
-                             <td> {{ faculdade.area_curso}}</td>
+                     <!--        <td> <a href="{% url 'details' faculdade.id %}"style="color:#51f542;">{{ courses_inst.nome_curso }}</a></td> -->
+                      <td> {{ courses_inst.nome_curso }}</a></td>
+                      <td> {{ courses_inst.area_curso}}</td>
                   </tr>     
                   {% endfor %}
                   {% else %}

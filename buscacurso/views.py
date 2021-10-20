@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Curso, Curso_teste, Faculdade
+#from .models import Curso, Curso_teste, Faculdade
+from .models import *
 import requests
 from django.shortcuts import render
 
@@ -16,10 +17,18 @@ def index (request):
 
     return render(request, 'course_list.html',dados)
 def course_list(request):
-    faculdades= Faculdade.objects.all
+    #faculdades= Faculdade.objects.all
+    courses_inst= CoursesInstitution.objects.all
+    courses=Courses.objects.all
+    institution=Institution.objects.all
+    maintainer=Maintainer.objects.all
 
     dados = {
-        'faculdades' :faculdades
+        #'faculdades' :faculdades
+        courses_inst : courses_inst,
+        courses : courses,
+        institution : institution,
+        maintainer : maintainer
     }
 
     return render(request, 'course_list.html',dados)
