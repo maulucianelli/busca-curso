@@ -129,6 +129,7 @@ class Command(BaseCommand):
                         number = only_numerics(ies['no'])
                         number = 0 if number > 30000 else number
                     
+                    
                     institution.address = ies['endereco'] if 'endereco' in ies else ''
                     institution.number = number
                     institution.complement = ies['complemento'] if 'complemento' in ies else ''
@@ -178,7 +179,9 @@ class Command(BaseCommand):
                                 course_object = Courses.objects.get(code=code_course)
                             except ObjectDoesNotExist:
                                 course_object = Courses(code=code_course)
+                            
 
+                            course_object.codigo = unicodedata.normalize('NFC', course['codigo'][:200])
                             course_object.name = unicodedata.normalize('NFC', course['situacao'][:200])
                             course_object.set_degree(course['grau'].encode('utf-8').strip())
                             course_object.set_modality(course['modalidade'].encode('utf-8').strip())
