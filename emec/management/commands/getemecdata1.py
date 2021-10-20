@@ -160,7 +160,7 @@ class Command(BaseCommand):
                 self.get_ies_data(options['code_ies'])
                 
             if options['from_input']:
-                self.get_ies_from_path();
+                self.get_ies_from_path()
             
         self.write('Finish run emec data!', True)
         

@@ -17,7 +17,7 @@ from buscacurso.models import CoursesInstitution
 from buscacurso.models import Institution
 from buscacurso.models import Maintainer
 
-from buscacurso.utils.functions import Status, cleaning_cnpj, only_numerics 
+from buscacurso.utils.functions import Status, cleaning_cnpj, only_numerics, clean_ies_name 
 
 
 class Command(BaseCommand):
@@ -86,6 +86,8 @@ class Command(BaseCommand):
                 ies_list = data[uf]
                 for ies in ies_list:
                     
+                    
+                    
                     # cleaning mask cnpj
                     cnpj = cleaning_cnpj(ies['cnpj'])
                     legal_nature = ies['natureza_juridica'] if 'natureza_juridica' in ies else ''
@@ -93,16 +95,17 @@ class Command(BaseCommand):
                     
                     # get or create maintainer
                     maintainer = Maintainer.objects.get_or_create(
-                        name=ies['mantenedora'].strip().title(),
+                        name=clean_ies_name(ies['mantenedora']).strip().title(),
                         cnpj=cnpj,
                         legal_nature = legal_nature,
                         legal_representative = legal_representative
                     )
                     
-                    code_ies = int(ies['code_ies'])                
-                    name_ies = ies['nome_da_ies'].strip().title()[:200]        
-                    abbreviation = name_ies[name_ies.rfind('-') + 2:20]
+                    code_ies = int(ies['code_ies'])  
                     
+                    #cleaning name             
+                    name_ies = clean_ies_name(ies['nome_da_ies']).strip().title()[:200]        
+                    abbreviation = name_ies[name_ies.rfind('-') + 2:]
                     # get or create institution
                                                                           
                     try:
@@ -128,7 +131,8 @@ class Command(BaseCommand):
                     if 'no' in ies:
                         number = only_numerics(ies['no'])
                         number = 0 if number > 30000 else number
-                    
+
+                    institution.title = name_ies
                     institution.address = ies['endereco'] if 'endereco' in ies else ''
                     institution.number = number
                     institution.complement = ies['complemento'] if 'complemento' in ies else ''
@@ -179,7 +183,8 @@ class Command(BaseCommand):
                             except ObjectDoesNotExist:
                                 course_object = Courses(code=code_course)
 
-                            course_object.name = unicodedata.normalize('NFC', course['situacao'][:200])
+                            course_object.name= unicodedata.normalize('NFC', course['nome'][:200])
+                            course_object.situation = unicodedata.normalize('NFC', course['situacao'][:200])
                             course_object.set_degree(course['grau'].encode('utf-8').strip())
                             course_object.set_modality(course['modalidade'].encode('utf-8').strip())
                             course_object.save()
@@ -194,7 +199,10 @@ class Command(BaseCommand):
                             
                             if 'cpc' in course and course['cpc'].isdigit():
                                 course_institution.cpc = only_numerics(course['cpc'])
+
+
                             
+                            course_institution.name =  course['nome'] + ' - ' + institution.abbreviation
                             course_institution.uf = course['uf'] if 'uf' in course else ''
                             course_institution.city = course['municipio'] if 'municipio' in course else ''
                             course_institution.save()

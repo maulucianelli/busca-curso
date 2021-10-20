@@ -1,3 +1,5 @@
+from typing import DefaultDict
+from unicodedata import name
 from django.db import models
 
 class Curso(models.Model):
@@ -35,7 +37,9 @@ class Curso_teste(models.Model):
 
 class Maintainer(models.Model):    
     
-    name = models.CharField(max_length=200)
+    def __str__(self):
+        return self.name
+    name = models.CharField(max_length=200, default="Mantenedora")
     cnpj = models.CharField(max_length=14)
     legal_nature = models.CharField(max_length=100)
     legal_representative = models.CharField(max_length=100)
@@ -77,6 +81,7 @@ class Institution(models.Model):
         (3, 'Universidade'),
     )
     
+    title = models.CharField(max_length=255)
     code = models.IntegerField(default=0)                                                   # Codigo da IES no MEC
     maintainer = models.ForeignKey(Maintainer,on_delete=models.CASCADE, related_name='institution')                  # Mantenedora
     ies = models.CharField(max_length=255)                                                  # Instituicao de ensino superior
@@ -110,7 +115,9 @@ class Institution(models.Model):
     email = models.EmailField()
     
     
-    
+    def __str__(self):
+        return self.title
+
     def set_admin_category(self, category):
         
         for c in self.CATEGORY_TYPES:
@@ -192,10 +199,10 @@ class Courses(models.Model):
     name = models.CharField(max_length=200)
     degree = models.PositiveSmallIntegerField(default=0, choices=DEGREE_TYPE)
     modality = models.PositiveSmallIntegerField(default=1, choices=MODALITY_TYPE)
-    
-
     courses_institution = models.ManyToManyField(Institution, through='CoursesInstitution', related_name='courses_institution')
-    
+    situation = models.CharField(max_length=200, default="Em análise")
+    def __str__(self):
+        return self.name
     def set_degree(self, degree):
         
         for d in self.DEGREE_TYPE:
@@ -264,6 +271,11 @@ class Courses(models.Model):
         ordering = ['name']
 
 class CoursesInstitution(models.Model):
+
+    def __str__(self):
+        return self.name
+    
+    name = models.CharField(max_length=200, default="Curso, Instituição")
 
     course = models.ForeignKey(Courses, on_delete=models.CASCADE)
 
