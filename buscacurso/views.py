@@ -25,10 +25,10 @@ def course_list(request):
 
     dados = {
         #'faculdades' :faculdades
-        courses_inst : courses_inst,
-        courses : courses,
-        institution : institution,
-        maintainer : maintainer
+        'courses_inst' : courses_inst,
+        'courses' : courses,
+        'institution' : institution,
+        'maintainer' : maintainer
     }
 
     return render(request, 'course_list.html',dados)
