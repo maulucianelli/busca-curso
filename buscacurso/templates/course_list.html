@@ -17,10 +17,9 @@
                 </thead>
                 <tbody>
 
-                  {% for item in courses_inst %}
+                  {% for item in courses %}
                   <tr>
-                      <td> <a href="{% url 'details' item.id%}"style="color:#51f542;">{{ item.course }}</a></td>
-                      <td> {{ item.institution}}</td>
+                      <td> <a href="{% url 'details' item.code}"style="color:#51f542;">{{ item.name }}</a></td>
                   </tr>     
                   {% endfor %}
 
