@@ -30,7 +30,6 @@ def cleaning_cnpj(cnpj):
     cnpj = cnpj.replace('.','')
     cnpj = cnpj.replace('/','')
     cnpj = cnpj.replace('-','')    
-    
     return cnpj
 
 
@@ -46,8 +45,6 @@ def only_numerics(seq):
     """
     number = ''.join([i for i in seq if  i.isdigit()])
     #number = filter(type(seq).isdigit, seq)
-    print("O TIPO É ESSE:", type(number))
-    print(number.isdigit())
 
     if not number.isdigit():
         return 0

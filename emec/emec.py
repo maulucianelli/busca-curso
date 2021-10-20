@@ -228,14 +228,15 @@ class Institution(object):
 					'codigo':course_code,
 					'codigo_campus': cells[0].get_text(strip=True),
 					'nome': decode_course,
-					#'modalidade': cells[1].get_text(strip=True),
-					#'grau': cells[2].get_text(strip=True),
+					'situacao':soup.find('img')['title'],
+					'modalidade': cells[1].get_text(strip=True),
+					'grau': cells[2].get_text(strip=True),
 					#'curso': normalize('NFKD', cells[3].get_text(strip=True)).encode('utf-8').capitalize(),
-					#'uf': cells[4].get_text(strip=True),
-					#'municipio': cells[5].get_text(strip=True),
-					#'enade': cells[6].get_text(strip=True),
-					#'cpc': cells[7].get_text(strip=True),
-					#'cc': cells[8].get_text(strip=True),
+					'uf': cells[4].get_text(strip=True),
+					'municipio': cells[5].get_text(strip=True),
+					'enade': cells[6].get_text(strip=True),
+					'cpc': cells[7].get_text(strip=True),
+					'cc': cells[8].get_text(strip=True),
 				}
 				code_course_campus = item['codigo_campus']
 				courses_campus = self.__parse_course_campus(code_course_campus)

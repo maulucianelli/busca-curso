@@ -136,7 +136,7 @@ class Command(BaseCommand):
                     institution.district = ies['bairro'] if 'bairro' in ies else ''
                     institution.city = ies['municipio'] if 'municipio' in ies else ''
                     institution.uf = ies['uf'] if 'uf' in ies else ''
-                    institution.tel = only_numerics(ies['telefone'])[:11] if 'telefone' in ies else ''
+                    institution.tel = str(only_numerics(ies['telefone']))[:11] if 'telefone' in ies else ''
                     institution.fax = str(only_numerics(ies['fax']))[:11] if 'fax' in ies else ''
                     institution.site = ies['sitio'] if 'sitio' in ies else ''
                     institution.email = ies['e-mail'].split(';')[0] if 'e-mail' in ies else ''
@@ -169,7 +169,7 @@ class Command(BaseCommand):
                             
                             # case disabled courses
                             disabled_courses = ['desativa', 'visita obrigat', 'suspens', 'veda', 'autorizado', 'divulgado']
-                            if any(dc in course['curso'] for dc in disabled_courses):
+                            if any(dc in course['situacao'] for dc in disabled_courses):
                                 continue
                             
                             code_course = only_numerics(course['codigo'])
@@ -179,7 +179,7 @@ class Command(BaseCommand):
                             except ObjectDoesNotExist:
                                 course_object = Courses(code=code_course)
 
-                            course_object.name = unicodedata.normalize('NFC', course['curso'][:200])
+                            course_object.name = unicodedata.normalize('NFC', course['situacao'][:200])
                             course_object.set_degree(course['grau'].encode('utf-8').strip())
                             course_object.set_modality(course['modalidade'].encode('utf-8').strip())
                             course_object.save()
