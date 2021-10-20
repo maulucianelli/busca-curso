@@ -51,3 +51,25 @@ def only_numerics(seq):
      
     return int(number)
             
+
+def clean_ies_name(name):
+    """
+    Remove Number from Institution name
+    
+    Args:
+        name (string):    string with numbers and characters Ex: (22) INSTITUTO PRESBITERIANO MACKENZIE.
+    
+    Returns:
+        only ies name as string
+    """
+
+    ies_name = ''.join([i for i in name if  not i.isdigit()])
+    ies_name = ies_name.replace('(','').replace(')','')
+
+    if ies_name.isdigit():
+        return "None"
+    
+    
+    return str(ies_name)
+
+
