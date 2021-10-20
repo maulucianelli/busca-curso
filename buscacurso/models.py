@@ -188,6 +188,9 @@ class Courses(models.Model):
         (1,'A Distância')
     )
     
+    codigo = models.CharField(max_length=200)
+
+
     code = models.IntegerField(default=0)
     name = models.CharField(max_length=200)
     degree = models.PositiveSmallIntegerField(default=0, choices=DEGREE_TYPE)
