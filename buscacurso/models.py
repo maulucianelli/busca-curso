@@ -200,7 +200,8 @@ class Courses(models.Model):
 
     code = models.IntegerField(default=0)
     name = models.CharField(max_length=200)
-    degree = models.PositiveSmallIntegerField(default=0, choices=DEGREE_TYPE)
+    degree = models.CharField(max_length=250, default="-")
+    #degree = models.PositiveSmallIntegerField(default=0, choices=DEGREE_TYPE)
     modality = models.PositiveSmallIntegerField(default=1, choices=MODALITY_TYPE)
     courses_institution = models.ManyToManyField(Institution, through='CoursesInstitution', related_name='courses_institution')
     situation = models.CharField(max_length=200, default="Em análise")
@@ -209,6 +210,7 @@ class Courses(models.Model):
     def set_degree(self, degree):
         
         for d in self.DEGREE_TYPE:
+            print("oiaaa  o d1", d[0])
             
             if d[1] == degree:
                 self.degree = d[0]

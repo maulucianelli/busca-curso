@@ -188,7 +188,7 @@ class Command(BaseCommand):
                             course_object.codigo = find_code(course['nome'])
                             course_object.name= unicodedata.normalize('NFC', course['nome'][:200])
                             course_object.situation = unicodedata.normalize('NFC', course['situacao'][:200])
-                            course_object.set_degree(course['grau'].encode('utf-8').strip())
+                            course_object.degree = unicodedata.normalize('NFC', course['grau'][:200])
                             course_object.set_modality(course['modalidade'].encode('utf-8').strip())
                             course_object.save()
                             
