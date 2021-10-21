@@ -19,7 +19,8 @@
 
                   {% for item in courses %}
                   <tr>
-                      <td> <a href="{% url 'details' item.code}"style="color:#51f542;">{{ item.name }}</a></td>
+                      <td> <a href="{% url 'details' item.codigo %}"style="color:#51f542;">{{ item.code }}</a></td>
+                    </a>
                   </tr>     
                   {% endfor %}
 

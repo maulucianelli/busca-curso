@@ -14,11 +14,11 @@
         <div class="card purple darken-3 z-depth-3">
           <div class="card-image">
             <img src="{%static 'images/curso-graduacao-ciencias-da-computacao-unisul.jpg'%}" class="image cover" alt="">
-            <span class="card-title">Descrição do Curso - {{faculdade.nome_curso}} </span>
+            <span class="card-title">Descrição do Curso - {{courses.name}} </span>
         </div> 
           <div class="card-content">
               <p></p>
-              <p class="white-text">{{faculdade.descricao_curso}}</p>
+              <p class="white-text">{{courses.name}}</p>
              <br>
             </div>
           </div>
@@ -58,21 +58,19 @@
                   <th class="purple accent-3">Natureza</th>
                 </thead>
                 <tbody>
-                  {% if curso_teste %}
-                    {% for curso_teste in curso_teste %}
-                    {% if curso_teste.codigo_curso  == 3 %}
-                    {#faculdade.id#}
-                      <tr>
-                      
-                        <td>{{curso_teste.}}</td>
-                        <td>{{curso_teste.nome_ies}}</td>
-                        <td>{{curso_teste.duracao}} Semestres</td>
-                        <td>{{curso_teste.categoria_administrativa}}</td>
+            
+                    {% for item in courses %}
+                    {% if curso_teste.codigo_curso  == courses.code %}
+
+                      <tr>                
+                        <td>{{courses}</td>
+                        <td>{{courses.nome_ies}}</td>
+                        <td>{{courses.duracao}} Semestres</td>
+                        <td>{{courses.categoria_administrativa}}</td>
                       </tr>
                       {% endif %}
                     {% endfor %}
-                  {% else %}
-                  {% endif %}
+
                 </tbody>
               </table>
             </div>

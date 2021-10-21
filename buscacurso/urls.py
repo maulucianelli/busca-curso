@@ -9,6 +9,6 @@ urlpatterns = [
     #criar nova janela PASSO 1
     path('course_list', views.course_list, name='course_list'),
     
-    path('<int:faculdade_id>', views.details, name='details'),
+    path('details/<str:courses_id>', views.details, name='details'),
     path('support', views.support, name='support'),
 ]
