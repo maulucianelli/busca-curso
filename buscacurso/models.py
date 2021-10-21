@@ -87,7 +87,7 @@ class Institution(models.Model):
     ies = models.CharField(max_length=255)                                                  # Instituicao de ensino superior
     abbreviation = models.CharField(max_length=20)                                          # Sigla
     
-    admin_category = models.PositiveSmallIntegerField(default=4, choices=CATEGORY_TYPES)
+    admin_category = models.CharField(max_length=200)
     situation = models.PositiveSmallIntegerField(default=1, choices=SITUATION_TYPES)
     academic_organization = models.PositiveSmallIntegerField(default=0, choices=ORGANIZATION_TYPES)
     

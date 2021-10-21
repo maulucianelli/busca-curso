@@ -121,7 +121,7 @@ class Command(BaseCommand):
                     # check if category exists, otherwise default is 4 (Private)
                     
                     if 'categoria_administrativa' in ies:
-                        institution.set_admin_category(ies['categoria_administrativa'].encode('utf-8').strip())
+                        institution.admin_category = unicodedata.normalize('NFC', ies['categoria_administrativa'][:200])
                     
                     # check if organization exists, otherwise default is 0 (Faculdade)
                     

@@ -1,7 +1,7 @@
 var el = document.querySelector('.tabs');
 var instance = M.Tabs.init(el, {});
 
-callAPI("https://limitless-shore-04114.herokuapp.com/https://api.educamaisbrasil.com.br/api/Curso/ConsultarSalarioPorteCargo?cursoUrl=ciencias-da-computacao", function(response){showSalary(response)});
+callAPI("https://limitless-shore-04114.herokuapp.com/https://api.educamaisbrasil.com.br/api/Curso/ConsultarSalarioPorteCargo?cursoUrl=administracao", function(response){showSalary(response)});
 function callAPI(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
