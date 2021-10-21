@@ -5,6 +5,7 @@ import json
 import os
 import time
 import unicodedata
+import base64
 
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.management.base import BaseCommand
@@ -17,7 +18,7 @@ from buscacurso.models import CoursesInstitution
 from buscacurso.models import Institution
 from buscacurso.models import Maintainer
 
-from buscacurso.utils.functions import Status, cleaning_cnpj, only_numerics, clean_ies_name 
+from buscacurso.utils.functions import Status, cleaning_cnpj, find_code, only_numerics, clean_ies_name 
 
 
 class Command(BaseCommand):
@@ -169,11 +170,12 @@ class Command(BaseCommand):
                     if 'courses' in ies:
                         
                         courses_list = ies['courses']
+                        
                         for course in courses_list:
                             
                             # case disabled courses
-                            disabled_courses = ['desativa', 'visita obrigat', 'suspens', 'veda', 'autorizado', 'divulgado']
-                            if any(dc in course['situacao'] for dc in disabled_courses):
+                            if course['situacao'] == 'Em Extinção':
+                                #print("----------------- aiiii to exstinto: ", course['nome'],course['situacao'])
                                 continue
                             
                             code_course = only_numerics(course['codigo'])
@@ -183,6 +185,7 @@ class Command(BaseCommand):
                             except ObjectDoesNotExist:
                                 course_object = Courses(code=code_course)
 
+                            course_object.codigo = find_code(course['nome'])
                             course_object.name= unicodedata.normalize('NFC', course['nome'][:200])
                             course_object.situation = unicodedata.normalize('NFC', course['situacao'][:200])
                             course_object.set_degree(course['grau'].encode('utf-8').strip())
