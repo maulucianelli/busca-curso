@@ -14,11 +14,11 @@
         <div class="card purple darken-3 z-depth-3">
           <div class="card-image">
             <img src="{%static 'images/curso-graduacao-ciencias-da-computacao-unisul.jpg'%}" class="image cover" alt="">
-            <span class="card-title">Descrição do Curso - {{courses.name}} </span>
+            <span class="card-title">Descrição do Curso - {{eachCourse.name}} </span>
         </div> 
           <div class="card-content">
               <p></p>
-              <p class="white-text">{{courses.name}}</p>
+              <p class="white-text">{{eachCourse.name}}</p>
              <br>
             </div>
           </div>
@@ -58,7 +58,7 @@
                   <th class="purple accent-3">Natureza</th>
                 </thead>
                 <tbody>
-            
+            <!--
                     {% for item in courses %}
                     {% if curso_teste.codigo_curso  == courses.code %}
 
@@ -70,7 +70,7 @@
                       </tr>
                       {% endif %}
                     {% endfor %}
-
+-->
                 </tbody>
               </table>
             </div>

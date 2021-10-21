@@ -16,14 +16,16 @@
                   <th class="purple accent-3">Faculdade</th>
                 </thead>
                 <tbody>
-
+                  {% if courses %}
                   {% for item in courses %}
                   <tr>
-                      <td> <a href="{% url 'details' item.codigo %}"style="color:#51f542;">{{ item.code }}</a></td>
+                      <td> <a href="{% url 'details' item.codigo %}"style="color:#51f542;">{{ item.name }}</a></td>
                     </a>
                   </tr>     
                   {% endfor %}
-
+                  {% else %}
+                  <td>No Courses</td>
+                  {% endif %}
          
                 </tbody>
               </table>

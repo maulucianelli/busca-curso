@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     #criar nova janela PASSO 1
     path('course_list', views.course_list, name='course_list'),
-    
-    path('details/<str:courses_id>', views.details, name='details'),
+    path('details/<str:pk>/', views.details, name='details'),
+    #path('details/<int:courses_id>', views.details, name='details'),
     path('support', views.support, name='support'),
 ]

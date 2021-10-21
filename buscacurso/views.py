@@ -17,14 +17,12 @@ def index (request):
 
     return render(request, 'course_list.html',dados)
 def course_list(request):
-    #faculdades= Faculdade.objects.all
     courses_inst= CoursesInstitution.objects.all
     courses=Courses.objects.all
     institution=Institution.objects.all
     maintainer=Maintainer.objects.all
 
     dados = {
-        #'faculdades' :faculdades
         'courses_inst' : courses_inst,
         'courses' : courses,
         'institution' : institution,
@@ -33,22 +31,18 @@ def course_list(request):
 
     return render(request, 'course_list.html',dados)
 
-def details(request,courses_id):
+def details(request,pk):
+    #courses_inst= CoursesInstitution.objects.all
+    #course=Courses.objects.get(code=pk)
+    eachCourse= Courses.objects.get(codigo=pk)
+    #institution=Institution.objects.all
+    #maintainer=Maintainer.objects.all
 
-    courses_inst= CoursesInstitution.objects.all
-    courses=Courses.objects.all
-    institution=Institution.objects.all
-    maintainer=Maintainer.objects.all
-
-    detalhes = get_object_or_404(Courses, pk = courses_id)
-
-    faculdade_a_exibir ={
-        'courses_inst':courses_inst,
-        'courses' : detalhes,
-        'institution': institution
+    details ={
+        'eachCourse' :  eachCourse,
     }
 
-    return render(request, 'details.html',faculdade_a_exibir)
+    return render(request, 'details.html',details)
 
 def support(request):
     return render(request, 'support.html')
