@@ -58,19 +58,24 @@
                   <th class="purple accent-3">Natureza</th>
                 </thead>
                 <tbody>
-            <!--
-                    {% for item in courses %}
-                    {% if curso_teste.codigo_curso  == courses.code %}
-
+              {% if eachInstitution %}
+              
+              {% for item in eachInstitution %}
+              {% if item.course == eachCourse %}
                       <tr>                
-                        <td>{{courses}</td>
-                        <td>{{courses.nome_ies}}</td>
+                        <td>{{item.institution}}</td>
+                        <td></td>
+                        <td>{{item.institution.admin_category_display}}</td>
+                        <td>{{item.institution.admin_category_display}}</td>
+                      <!-- <td>{{courses.nome_ies}}</td>
                         <td>{{courses.duracao}} Semestres</td>
-                        <td>{{courses.categoria_administrativa}}</td>
+                        <td>{{courses.categoria_administrativa}}</td>--> 
                       </tr>
                       {% endif %}
                     {% endfor %}
--->
+                      {% else %}
+                      <td>no course</td>
+                      {% endif %}
                 </tbody>
               </table>
             </div>

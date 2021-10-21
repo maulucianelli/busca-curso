@@ -32,14 +32,16 @@ def course_list(request):
     return render(request, 'course_list.html',dados)
 
 def details(request,pk):
-    #courses_inst= CoursesInstitution.objects.all
+    eachInstitution= CoursesInstitution.objects.all
     #course=Courses.objects.get(code=pk)
+    context=[]
     eachCourse= Courses.objects.get(codigo=pk)
-    #institution=Institution.objects.all
-    #maintainer=Maintainer.objects.all
-
+    institution=Institution.objects.filter(title=pk)
+    #context['admin_category'] = institution.admin_category_display()
     details ={
         'eachCourse' :  eachCourse,
+        'eachInstitution': eachInstitution,
+        'institution': institution,
     }
 
     return render(request, 'details.html',details)
