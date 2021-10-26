@@ -143,7 +143,8 @@ CORS_ALLOW_HEADERS = [
     "x-requested-with",
 ]
 CORS_ORIGIN_WHITELIST = [
-'http://localhost:8000',
-'http://127.0.0.1:8000',
-'https://api.educamaisbrasil.com.br',
+    'http://google.com',
+    'http://hostname.example.com',
+    'http://localhost:8000',
+    'http://127.0.0.1:9000'
 ]
