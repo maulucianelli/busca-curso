@@ -7,10 +7,10 @@
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">Lista de Cursos</h1>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Procure o curso dos seus SONHOS">
+        <input type="text" id="searchArticles" onkeyup="searchArticles()" placeholder="Procure o curso dos seus SONHOS">
         <div class="card purple darken-3 z-depth-3 ">
             <div class="tableFixHead-big">
-              <table id = "myTable" class="rensponsive-table centered white-text">
+              <table id = "articles" class="rensponsive-table centered white-text">
                 <thead class = "header">
                   <th class="purple accent-3">Nome do Curso</th>
                   <th class="purple accent-3">Faculdade</th>
@@ -27,6 +27,7 @@
                   <td>No Courses</td>
                   {% endif %}
          
+                  
                 </tbody>
               </table>
             </div>
