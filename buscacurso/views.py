@@ -3,7 +3,8 @@ from django.shortcuts import get_object_or_404, render
 from .models import *
 import requests
 from django.shortcuts import render
-from tcc import settings
+import base64
+from django.core.exceptions import MultipleObjectsReturned
 
 def index (request):
     return render(request, 'index.html')
@@ -34,7 +35,8 @@ def course_list(request):
 
 def details(request,pk):
     course_name = 'administracao'
-    response = requests.get("https://api.educamaisbrasil.com.br/api/Curso/ConsultarSalarioPorteCargo?cursoUrl="+ course_name)
+    print(base64.b64decode(pk).decode('utf-8'))
+    response = requests.get("https://api.educamaisbrasil.com.br/api/Curso/ConsultarSalarioPorteCargo?cursoUrl="+ base64.b64decode(pk).decode('utf-8'))
     if response.status_code == 200:
         salarydata = response.json()
         print("deu bom", response.status_code)
@@ -42,7 +44,10 @@ def details(request,pk):
         print("deu ruim" , response)
     eachInstitution= CoursesInstitution.objects.all
     #course=Courses.objects.get(code=pk)
-    eachCourse= Courses.objects.get(codigo=pk)
+    try:
+        eachCourse= Courses.objects.get(codigo=pk)
+    except MultipleObjectsReturned:
+        eachCourse= Courses.objects.filter(codigo=pk)[0]
     institution=Institution.objects.filter(title=pk)
     #context['admin_category'] = institution.admin_category_display()
     details ={
