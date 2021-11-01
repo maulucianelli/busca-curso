@@ -1,9 +1,11 @@
 var el = document.querySelector('.tabs');
-var instance = M.Tabs.init(el, {});
-console.log("hellow World entrou no script")
 //callAPI("https://limitless-shore-04114.herokuapp.com/https://api.educamaisbrasil.com.br/api/Curso/ConsultarSalarioPorteCargo?cursoUrl=administracao", function(response){showSalary(response)});
 
-function callAPI(url, callback) {
+function b64convert( str ) {
+    return decodeURIComponent(escape(window.atob( str )));
+}
+function callAPI(code, callback) {
+    url = "https://limitless-shore-04114.herokuapp.com/https://api.educamaisbrasil.com.br/api/Curso/ConsultarSalarioPorteCargo?cursoUrl=" + code
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.responseType = 'json';
@@ -12,16 +14,19 @@ function callAPI(url, callback) {
             callback(xhr.response)
         }else{
             console.log("Erro ao acessar a API")
+            return 0;
         }
     }
     xhr.send();
+    return 1;
 }
 
 function showSalary(response){
-  document.getElementById("salario_junior").innerText += response[1].SALARIO_TRAINEE
-  document.getElementById("salario_pleno").innerText += response[1].SALARIO_PLENO
-  document.getElementById("salario_senior").innerText += response[1].SALARIO_SENIOR
-  console.log("heloo")
+    if(response.length>0){
+        document.getElementById("salario_junior").innerText += response[1].SALARIO_TRAINEE
+        document.getElementById("salario_pleno").innerText += response[1].SALARIO_PLENO
+        document.getElementById("salario_senior").innerText += response[1].SALARIO_SENIOR
+    }
 }
 var $rows = $('#table tr');
 $('#search').keyup(function() {
