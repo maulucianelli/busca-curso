@@ -44,10 +44,7 @@ def details(request,pk):
         print("deu ruim" , response)
     eachInstitution= CoursesInstitution.objects.all
     #course=Courses.objects.get(code=pk)
-    try:
-        eachCourse= Courses.objects.get(codigo=pk)
-    except MultipleObjectsReturned:
-        eachCourse= Courses.objects.filter(codigo=pk)[0]
+    eachCourse= Courses.objects.get(code=pk)
     institution=Institution.objects.filter(title=pk)
     #context['admin_category'] = institution.admin_category_display()
     details ={
