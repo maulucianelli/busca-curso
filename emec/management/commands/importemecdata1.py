@@ -18,7 +18,7 @@ from buscacurso.models import CoursesInstitution
 from buscacurso.models import Institution
 from buscacurso.models import Maintainer
 
-from buscacurso.utils.functions import Status, cleaning_cnpj, find_code, only_numerics, clean_ies_name 
+from buscacurso.utils.functions import Status, clean_duration, cleaning_cnpj, find_code, only_numerics, clean_ies_name 
 
 
 class Command(BaseCommand):
@@ -105,8 +105,10 @@ class Command(BaseCommand):
                     code_ies = int(ies['code_ies'])  
                     
                     #cleaning name             
-                    name_ies = clean_ies_name(ies['nome_da_ies']).strip().title()[:200]        
+                    name_ies = clean_ies_name(ies['nome_da_ies']).strip().title()[:200]  
+                  
                     abbreviation = name_ies[name_ies.rfind('-') + 2:]
+                    print(name_ies)
                     # get or create institution
                                                                           
                     try:
@@ -119,6 +121,7 @@ class Command(BaseCommand):
                     institution.abbreviation = abbreviation
                     
                     # check if category exists, otherwise default is 4 (Private)
+
                     
                     if 'categoria_administrativa' in ies:
                         institution.admin_category = unicodedata.normalize('NFC', ies['categoria_administrativa'][:200])
@@ -177,7 +180,9 @@ class Command(BaseCommand):
                             if course['situacao'] == 'Em Extinção':
                                 #print("----------------- aiiii to exstinto: ", course['nome'],course['situacao'])
                                 continue
-                            
+
+                              
+
                             code_course = only_numerics(course['codigo'])
                             
                             try:
@@ -190,6 +195,8 @@ class Command(BaseCommand):
                             course_object.situation = unicodedata.normalize('NFC', course['situacao'][:200])
                             course_object.degree = unicodedata.normalize('NFC', course['grau'][:200])
                             course_object.set_modality(course['modalidade'].encode('utf-8').strip())
+                            
+
                             course_object.save()
                             
                             try:
@@ -202,12 +209,14 @@ class Command(BaseCommand):
                             
                             if 'cpc' in course and course['cpc'].isdigit():
                                 course_institution.cpc = only_numerics(course['cpc'])
-
-
                             
-                            course_institution.name =  course['nome'] + ' - ' + institution.abbreviation
+                            semestres = course['periodo'][course['periodo'].rfind('-')+2:]
+                            semestres = clean_duration(semestres) 
+
+                            course_institution.name =  course['nome'] + ' - ' + institution.title
                             course_institution.uf = course['uf'] if 'uf' in course else ''
                             course_institution.city = course['municipio'] if 'municipio' in course else ''
+                            course_institution.duration = semestres
                             course_institution.save()
                             
                             

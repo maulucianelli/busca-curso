@@ -205,12 +205,12 @@ class Courses(models.Model):
     modality = models.PositiveSmallIntegerField(default=1, choices=MODALITY_TYPE)
     courses_institution = models.ManyToManyField(Institution, through='CoursesInstitution', related_name='courses_institution')
     situation = models.CharField(max_length=200, default="Em análise")
+    
     def __str__(self):
         return self.name
     def set_degree(self, degree):
         
         for d in self.DEGREE_TYPE:
-            print("oiaaa  o d1", d[0])
             
             if d[1] == degree:
                 self.degree = d[0]
@@ -283,6 +283,7 @@ class CoursesInstitution(models.Model):
     name = models.CharField(max_length=200, default="Curso, Instituição")
 
     course = models.ForeignKey(Courses, on_delete=models.CASCADE)
+    duration = models.CharField(max_length=250, default="-", null=True)
 
     institution = models.ForeignKey(
         Institution, on_delete=models.CASCADE, related_name='courses_inst'
