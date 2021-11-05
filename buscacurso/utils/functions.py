@@ -161,22 +161,58 @@ def clean_duration(semestres):
     """
     if(semestres.rfind('semes') == -1):
         if(len(semestres)>0):
-            print('-----------')
-            print('antigo', semestres)
-            numSem = semestres[0:2].replace(' ','')
-            aux = [0]*len(numSem)
-            for i in range(len(numSem)):
-                try:
-                    aux[i] = int(numSem[i])
-                except ValueError:
-                    pass
-            
-            aux[0] = aux[0]*2
-            semestres = semestres.replace('anos', 'semestres')
-            auxSem = list(semestres)
-            auxSem[0] = str(aux[0])
-            semestres = "".join(auxSem)
-            print('novo:', semestres)
+            if(semestres.rfind('anos') != -1):
+                print('-----------')
+                print('antigo', semestres)
+                numSem = semestres[0:2].replace(' ','')
+                aux = [0]*len(numSem)
+                for i in range(len(numSem)):
+                    try:
+                        aux[i] = int(numSem[i])
+                    except ValueError:
+                        pass
+                
+                aux[0] = aux[0]*2
+                print("entrou aqui")
+                semestres = semestres.replace('anos', 'semestres')
+                auxSem = list(semestres)
+                auxSem[0] = str(aux[0])
+                semestres = "".join(auxSem)
+                print('novo:', semestres)
+
+            elif(semestres.rfind('trimestres') != -1):
+                print('-----------')
+                print('antigo', semestres)
+                
+                numSem = semestres[0:2].replace(' ','')
+                aux = [0]*len(numSem)
+                for i in range(len(numSem)):
+                    try:
+                        aux[i] = int(numSem[i])
+                    except ValueError:
+                        pass
+                semestres = semestres.replace('trimestres', 'semestres')
+                auxSem = list(semestres)
+
+                if(len(aux)>1):
+                    auxNum = str(aux[0])+str(aux[1])
+                    auxNum = str(int(auxNum)/2)
+                    print('olha aqui seu merda', auxNum[0])
+                    if(len(auxNum)>1):
+                        auxSem[0] = str(auxNum[0])
+                        auxSem[1] = str(auxNum[1])
+                        semestres = "".join(auxSem)
+                        print('novo dois digi:', semestres)
+                    else:
+                        auxSem[0] = str(auxNum[0])
+                        semestres = "".join(auxSem)
+                        print('novo um digi:', semestres)
+                else:
+                    aux[0] = aux[0]/2
+                    auxSem[0] = str(aux[0])
+                    semestres = "".join(auxSem)
+                    print('novo trim um digi:', semestres)
+
     return semestres
 
 
