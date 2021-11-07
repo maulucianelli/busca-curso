@@ -36,16 +36,16 @@ def course_list(request):
 
 def details(request,pk):
     eachInstitution= CoursesInstitution.objects.all
-    #course=Courses.objects.get(code=pk)
+    eachDescription=CoursesDescription.objects.all
     eachCourse= Courses.objects.get(code=pk)
     institution=Institution.objects.filter(title=pk)
-    #context['admin_category'] = institution.admin_category_display()
     testJson = serializers.serialize('json', [eachCourse])
     details ={
         'eachCourse' :  eachCourse,
         'eachInstitution': eachInstitution,
         'institution': institution,
-        'test': testJson
+        'test': testJson,
+        'eachDescription': eachDescription,
     }
     return render(request, 'details.html',details)
 

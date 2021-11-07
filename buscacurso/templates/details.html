@@ -4,90 +4,94 @@
 {%include 'partials/menu.html'%}
 <script src="{%static 'js/script.js'%}"></script>
 <script>
-  callAPI(b64convert(JSON.parse('{{test|safe}}')[0].fields.codigo), function(response){showSalary(response)});
+  callAPI(b64convert(JSON.parse('{{test|safe}}')[0].fields.codigo), function (response) { showSalary(response) });
 </script>
-  <div class="section no-pad-bot" id="index-banner">
-      <div class="container">
-        <div class="col s12 m7">
-          <div class="section no-pad-bot" id="index-banner">
-      <div class="container">
-        <br><br>
-      </div>
-    </div>
-        <br>
-        <div class="card purple darken-3 z-depth-3">
-          <div class="card-image">
-            <img src="{%static 'images/curso-graduacao-ciencias-da-computacao-unisul.jpg'%}" class="image cover" alt="">
-            <span class="card-title">Descrição do Curso - {{eachCourse.name}} </span>
-        </div> 
-          <div class="card-content">
-              <p></p>
-              <p class="white-text">{{eachCourse.name}}</p>
-             <br>
-            </div>
-          </div>
-        </div> 
-      <br><br>
-      <h4 class="header">Media Salarial</h4>
-      
-      <div class="card purple darken-3 z-depth-3 ">
-        <div class="tableFixHead-small">
-          <table id = "myTable" class="rensponsive-table centered white-text">
-            <thead class="header">
-              <th class="purple accent-3">Junior</th>
-              <th class="purple accent-3">Pleno</th>
-              <th class="purple accent-3">Senior</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td id="salario_junior" >R$  </td>
-                <td id="salario_pleno" >R$ </td>
-                <td id="salario_senior" >R$ </td>
-              </tr>
-            </tbody>
-          </table>
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <div class="col s12 m7">
+      <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+          <br><br>
         </div>
       </div>
-        <br><br>
-        
-      <br><br>
-        <h4 class="header">Listagem de Instituições</h4>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Procure sua Faculdade">
-        <div class="card purple darken-3 z-depth-3 ">
-            <div class="tableFixHead-small">
-              <table id = "myTable" class="rensponsive-table centered white-text">
-                <thead class="header">
-                  <th class="purple accent-3">Instituição</th>
-                  <th class="purple accent-3">Duração</th>
-                  <th class="purple accent-3">Natureza</th>
-                </thead>
-                <tbody>
-              {% if eachInstitution %}
-              
-              {% for item in eachInstitution %}
-              {% if item.course == eachCourse %}
-                      <tr>                
-                        <td>{{item.institution}}</td>
-                        <td>{{item.duration}}</td>
-                        <td>{{item.institution.admin_category}}</td>
-                      <!-- <td>{{courses.nome_ies}}</td>
-                        <td>{{courses.duracao}} Semestres</td>
-                        <td>{{courses.categoria_administrativa}}</td>--> 
-                      </tr>
-                      {% endif %}
-                    {% endfor %}
-                      {% else %}
-                      <td>no course</td>
-                      {% endif %}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <br><br>
+      <br>
+      <div class="card purple darken-3 z-depth-3">
+        <div class="card-image">
+          <img src="{%static 'images/curso-graduacao-ciencias-da-computacao-unisul.jpg'%}" class="image cover" alt="">
+          <span class="card-title">Descrição do Curso - {{eachCourse.name}} </span>
+        </div>
+        <div class="card-content">
+          <p></p>
+          {% if eachDescription %}
+          {% for item in eachDescription %}
+          {% if item.course == eachCourse.course%}
+          <p class="white-text">{{item.description}}</p>
+          {% endif %}
+          {% endfor %}
+          {% else %}
+          <p class="white-text">não entrou - descrição</p>
+          {% endif %}
+          <br>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <h4 class="header">Media Salarial</h4>
+
+    <div class="card purple darken-3 z-depth-3 ">
+      <div class="tableFixHead-small">
+        <table id="myTable" class="rensponsive-table centered white-text">
+          <thead class="header">
+            <th class="purple accent-3">Junior</th>
+            <th class="purple accent-3">Pleno</th>
+            <th class="purple accent-3">Senior</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="salario_junior">R$ </td>
+              <td id="salario_pleno">R$ </td>
+              <td id="salario_senior">R$ </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br><br>
+
+    <br><br>
+    <h4 class="header">Listagem de Instituições</h4>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Procure sua Faculdade">
+    <div class="card purple darken-3 z-depth-3 ">
+      <div class="tableFixHead-small">
+        <table id="myTable" class="rensponsive-table centered white-text">
+          <thead class="header">
+            <th class="purple accent-3">Instituição</th>
+            <th class="purple accent-3">Duração</th>
+            <th class="purple accent-3">Natureza</th>
+          </thead>
+          <tbody>
+            {% if eachInstitution %}
+
+            {% for item in eachInstitution %}
+            {% if item.course == eachCourse %}
+            <tr>
+              <td>{{item.institution}}</td>
+              <td>{{item.duration}}</td>
+              <td>{{item.institution.admin_category}}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            {% else %}
+            <td>no course</td>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br><br>
   </div>
 
   {% include 'partials/footer.html' %}
   {% endblock %}
-</html>
 
-
+  </html>

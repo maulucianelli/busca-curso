@@ -303,4 +303,9 @@ class CoursesInstitution(models.Model):
     class Meta:
         ordering = ['id']
 
+class CoursesDescription(models.Model):
 
+    description = models.CharField(max_length=400)
+    code = models.ForeignKey(Courses, on_delete=models.CASCADE)    
+    def __str__(self):
+        return str(self.code)
