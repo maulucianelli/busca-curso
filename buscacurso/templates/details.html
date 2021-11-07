@@ -19,6 +19,7 @@
         <div class="card-image">
           <img src="{%static 'images/curso-graduacao-ciencias-da-computacao-unisul.jpg'%}" class="image cover" alt="">
           <span class="card-title">Descrição do Curso - {{eachCourse.name}} </span>
+
         </div>
         <div class="card-content">
           <p></p>
@@ -73,7 +74,7 @@
             {% if eachInstitution %}
 
             {% for item in eachInstitution %}
-            {% if item.course == eachCourse %}
+            {% if item.course == eachCourse%}
             <tr>
               <td>{{item.institution}}</td>
               <td>{{item.duration}}</td>

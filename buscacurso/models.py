@@ -305,7 +305,7 @@ class CoursesInstitution(models.Model):
 
 class CoursesDescription(models.Model):
 
-    description = models.CharField(max_length=400)
+    description = models.TextField()
     code = models.ForeignKey(Courses, on_delete=models.CASCADE)    
     def __str__(self):
         return str(self.code)
