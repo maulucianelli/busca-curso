@@ -23,15 +23,7 @@
         </div>
         <div class="card-content">
           <p></p>
-          {% if eachDescription %}
-          {% for item in eachDescription %}
-          {% if item.course == eachCourse.course%}
-          <p class="white-text">{{item.description}}</p>
-          {% endif %}
-          {% endfor %}
-          {% else %}
-          <p class="white-text">não entrou - descrição</p>
-          {% endif %}
+          <p class="white-text">{{eachCourse.description}}</p>
           <br>
         </div>
       </div>

@@ -36,7 +36,6 @@ def course_list(request):
 
 def details(request,pk):
     eachInstitution= CoursesInstitution.objects.all
-    eachDescription=CoursesDescription.objects.all
     eachCourse= Courses.objects.get(code=pk)
     institution=Institution.objects.filter(title=pk)
     testJson = serializers.serialize('json', [eachCourse])
@@ -45,7 +44,7 @@ def details(request,pk):
         'eachInstitution': eachInstitution,
         'institution': institution,
         'test': testJson,
-        'eachDescription': eachDescription,
+
     }
     return render(request, 'details.html',details)
 

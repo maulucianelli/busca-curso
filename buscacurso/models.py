@@ -197,7 +197,7 @@ class Courses(models.Model):
     
     codigo = models.CharField(max_length=200)
 
-
+    description = models.TextField()
     code = models.IntegerField(default=0)
     name = models.CharField(max_length=200)
     degree = models.CharField(max_length=250, default="-")
@@ -303,9 +303,3 @@ class CoursesInstitution(models.Model):
     class Meta:
         ordering = ['id']
 
-class CoursesDescription(models.Model):
-
-    description = models.TextField()
-    code = models.ForeignKey(Courses, on_delete=models.CASCADE)    
-    def __str__(self):
-        return str(self.code)
