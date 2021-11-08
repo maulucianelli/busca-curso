@@ -18,7 +18,7 @@ from buscacurso.models import CoursesInstitution
 from buscacurso.models import Institution
 from buscacurso.models import Maintainer
 
-from buscacurso.utils.functions import Status, clean_duration, cleaning_cnpj, only_numerics, clean_ies_name 
+from buscacurso.utils.functions import Status, clean_duration, cleaning_cnpj, only_numerics, clean_ies_name, find_code 
 
 
 class Command(BaseCommand):
@@ -177,7 +177,7 @@ class Command(BaseCommand):
                         for course in courses_list:
                             
                             # case disabled courses
-                            if (course['situacao'] == 'Em Extinção' or course['situacao'] == 'Extinto'):
+                            if (course['situacao'] == 'Em Extinção' ):
                                 #print("----------------- aiiii to exstinto: ", course['nome'],course['situacao'])
                                 continue
 
@@ -190,7 +190,7 @@ class Command(BaseCommand):
                             except ObjectDoesNotExist:
                                 course_object = Courses(code=code_course)
 
-                            course_object.codigo = unicodedata.normalize('NFC', course['nome'][:200])
+                            course_object.codigo = find_code(course['nome'])
                             course_object.name= unicodedata.normalize('NFC', course['nome'][:200])
                             course_object.situation = unicodedata.normalize('NFC', course['situacao'][:200])
                             course_object.degree = unicodedata.normalize('NFC', course['grau'][:200])
