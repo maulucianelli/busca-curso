@@ -194,7 +194,7 @@ class Courses(models.Model):
         (0,'Presencial'),
         (1,'A Distância')
     )
-    
+    #id = models.IntegerField(primary_key=True)
     codigo = models.CharField(max_length=200)
 
     description = models.TextField()
