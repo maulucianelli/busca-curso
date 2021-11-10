@@ -17,10 +17,12 @@
           <tbody>
             {% if courses %}
             {% for item in courses %}
+            {% if item.degree == "Bacharelado" or item.degree == "Licenciatura" %}
             <tr>
               <td> <a href="{% url 'details' item.code %}" style="color:#51f542;">{{ item.name }}</a></td>
               </a>
             </tr>
+            {% endif %}
             {% endfor %}
             {% else %}
             <td>No Courses</td>
