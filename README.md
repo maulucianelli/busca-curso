@@ -1,12 +1,10 @@
 Instruções para execução e instalação
 
 Instalações:
- - Instalar python
- - Instalar 'pip install django'
- - Instalar 'pip install django-cors-headers'
+    - pip install -r requirements.txt
 
 Executar Servidor 
- - 'python manage.py runserver'
+    - 'python manage.py runserver'
 
 Comandos importantes
 
@@ -34,13 +32,7 @@ python manage.py getemecdata1 --from_input --verbose
 
 **Comando importemecdata importa os dados do e-MEC para a base de dados do Agvest**
 
-Utilize a opção --uf para importar dados do e-MEC de um arquivo json com o nome do UF.
-
-```python
-python manage.py importemecdata1 --uf sp --verbose
-```
-
-Utilize sem opção para importar todos os arquivos json (todos os estados) extraidos do site do e-MEC
+Utilize para importar todos os arquivos json (todos os estados) extraidos do site do e-MEC
 
 ```python
 python manage.py importemecdata1
