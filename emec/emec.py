@@ -60,7 +60,6 @@ class Institution(object):
 		ies_code = str(self.code_ies).encode("utf-8") #Converte para utf-8 bytes para ser convertido para B64
 		iesb64 = base64.b64encode(ies_code).decode('utf-8') #Converte para B64 e depois converte de bytes para str
 		#https://emec.mec.gov.br/emec/consulta-ies/index/d96957f455f6405d14c6542552b0f6eb/Mjl=
-		#https://emec.mec.gov.br/emec/consulta-ies/index/d96957f455f6405d14c6542552b0f6eb/MTY5MzQ=
 		URL = f"https://emec.mec.gov.br/emec/consulta-ies/index/d96957f455f6405d14c6542552b0f6eb/{iesb64}"
 
 		
@@ -79,41 +78,19 @@ class Institution(object):
 		for fields in fields_ies:
 			key = ''
 			value = ''
-			for f in fields.find_all('td'):   
-				#print("____________")
-				#print(f)
-				#print("____________")
+			for f in fields.find_all('td'):    
 				aux = f.get_text(strip=True)
-				#print("aux:", aux)
+				#print("aux:")
 				#print(aux)
-				
+				#print(f)
 				if len(aux):
 					if 'tituloCampos' in f['class']:
 						key = normalize_key(aux).decode('UTF-8')
 						#print("key: ", key)
 					else:
-						div_find = f.find_all('div')
-						if div_find == []:
-							value = aux
-							self.data_ies[key] = value
-							#print("value: ", self.data_ies[key])
-						else:
-							teste = 0
-							for j in f.find_all('div'):
-								#print("o valor da variavel teste é:", teste)
-								#print("--------------------")
-								#print(j)
-								#print("--------------------")
-								if teste == 0:
-									aux2 = j.get_text(strip=True)
-									value = aux2
-									#print("aux dentro do for J:", aux2)
-									teste = 1
-									self.data_ies[key] = value
-									#print("value: ", self.data_ies[key])
-
-								
-			#print("------------------------------------------------------")
+						value = aux
+						self.data_ies[key] = value
+						#print("value: ", self.data_ies[key])
 		
 		# insere o codigo da ies
 		self.data_ies['code_ies'] = self.code_ies
