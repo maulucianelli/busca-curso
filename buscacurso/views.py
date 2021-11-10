@@ -20,7 +20,6 @@ def index (request):
 
     return render(request, 'course_list.html',dados)
 def course_list(request):
-    #MyModel.objects.filter(blah=blah).first()
     courses_inst= CoursesInstitution.objects.all
     courses=Courses.objects.all
     institution=Institution.objects.all
