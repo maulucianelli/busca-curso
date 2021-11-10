@@ -183,7 +183,7 @@ class Command(BaseCommand):
 
                               
 
-                            code_course = only_numerics(course['codigo'])
+                            code_course = (course['codigo'])
                             
                             try:
                                 course_object = Courses.objects.get(code=code_course)
