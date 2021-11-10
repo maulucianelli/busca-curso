@@ -68,7 +68,7 @@ class Command(BaseCommand):
         
         #filename = os.path.join(settings.BASE_DIR, 'emec/emec_data/output/', uf.upper() + '.json')
         filename = os.path.join(settings.BASE_DIR, 'emec/data/output/',  uf.upper() + '.json')
-        #print("filename:", filename)
+        print("filename:", filename)
         # check if file exists
         if os.path.exists(filename):
             
@@ -77,7 +77,7 @@ class Command(BaseCommand):
             # open file and read json                
             with open(filename, encoding='utf-8') as data_file:
                 data = json.loads(data_file.read())
-                #print (data)
+                print (data)
 
             # start time            
             start = time.time()
@@ -108,7 +108,7 @@ class Command(BaseCommand):
                     name_ies = clean_ies_name(ies['nome_da_ies']).strip().title()[:200]  
                   
                     abbreviation = name_ies[name_ies.rfind('-') + 2:]
-                    #rint(name_ies)
+                    print(name_ies)
                     # get or create institution
                                                                           
                     try:
@@ -178,13 +178,15 @@ class Command(BaseCommand):
                             
                             # case disabled courses
                             if (course['situacao'] == 'Em Extinção' or course['situacao'] == 'Extinto' ):
-                                print("----------------- aiiii to exstinto: ", course['nome'],course['situacao'])
+                                #print("----------------- aiiii to exstinto: ", course['nome'],course['situacao'])
                                 continue
+
+                              
 
                             code_course = only_numerics(course['codigo'])
                             
                             try:
-                                course_object = Courses.objects.get(codigo=course['codigo'])
+                                course_object = Courses.objects.get(code=code_course)
                             except ObjectDoesNotExist:
                                 course_object = Courses(code=code_course)
 
@@ -194,7 +196,7 @@ class Command(BaseCommand):
                             course_object.degree = unicodedata.normalize('NFC', course['grau'][:200])
                             course_object.set_modality(course['modalidade'].encode('utf-8').strip())
                             
-                            print(course_object.name)
+
                             course_object.save()
                             
                             try:
@@ -215,13 +217,12 @@ class Command(BaseCommand):
                             course_institution.uf = course['uf'] if 'uf' in course else ''
                             course_institution.city = course['municipio'] if 'municipio' in course else ''
                             course_institution.duration = semestres
-                            #print("----------")
-                            #print(course_institution.name)
-                            #print(course_institution.uf)
-                            #print(course_institution.city)
-                            #print(course_institution.duration)
-                            #print(course_institution.course)
-                            #print(course_institution.institution)
+                            print(course_institution.name)
+                            print(course_institution.uf)
+                            print(course_institution.city)
+                            print(course_institution.duration)
+                            print(course_institution.course)
+                            print(course_institution.institution)
                             course_institution.save()
                             
                             
@@ -241,7 +242,7 @@ class Command(BaseCommand):
         self.write('Starting emec data import from all json files in the folder\n', status=Status.info)
         
         path = os.path.join(settings.BASE_DIR, 'emec/data/output/')
-        #print("path:", path)
+        print("path:", path)
         for filename in glob(path + '*.json'):
             uf = filename.replace(path, '').replace('.json', '')
             self.import_data_from_uf(uf)
