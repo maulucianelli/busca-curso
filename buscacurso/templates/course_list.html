@@ -16,16 +16,16 @@
           </thead>
           <tbody>
             {% if courses %}
-            {% for key, value in courses.items %}
+            {% for item in courses %}
             <tr>
-              <td> <a href="{% url 'details' value.id %}" style="color:#51f542;">{{ key }}</a></td>
+              <td> <a href="{% url 'details' item.code %}" style="color:#51f542;">{{ item.name }}</a></td>
               </a>
             </tr>
             {% endfor %}
             {% else %}
             <td>No Courses</td>
             {% endif %}
-  
+
 
           </tbody>
         </table>

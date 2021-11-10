@@ -1,4 +1,3 @@
-from django.db.models.expressions import OrderBy
 from django.shortcuts import get_object_or_404, render
 #from .models import Curso, Curso_teste, Faculdade
 from .models import *
@@ -22,25 +21,23 @@ def index (request):
     return render(request, 'course_list.html',dados)
 def course_list(request):
     #MyModel.objects.filter(blah=blah).first()
-   # courses_inst= CoursesInstitution.objects.all
-    courses_dict = {}
-    courses=Courses.objects.all()
-    for item in courses:
-        courses_dict[item.name] = item
-    #courses_list = [course.name for course in courses]
-    #institution=Institution.objects.all
-  #  maintainer=Maintainer.objects.all
+    courses_inst= CoursesInstitution.objects.all
+    courses=Courses.objects.all
+    institution=Institution.objects.all
+    maintainer=Maintainer.objects.all
 
     dados = {
-        #'courses' : set(courses_list),
-        'courses' : courses_dict
-        }
+        'courses_inst' : courses_inst,
+        'courses' : courses,
+        'institution' : institution,
+        'maintainer' : maintainer
+    }
 
     return render(request, 'course_list.html',dados)
 
 def details(request,pk):
     eachInstitution= CoursesInstitution.objects.all
-    eachCourse= Courses.objects.filter(id=pk).first()
+    eachCourse= Courses.objects.get(code=pk)
     institution=Institution.objects.filter(title=pk)
     testJson = serializers.serialize('json', [eachCourse])
     details ={
