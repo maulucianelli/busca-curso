@@ -162,7 +162,7 @@ class Courses(models.Model):
         (1,'A Distância')
     )
     
-    codigo = models.CharField(max_length=200)
+   
 
     description = models.TextField()
     code = models.CharField(max_length=200)

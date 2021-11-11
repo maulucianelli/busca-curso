@@ -192,8 +192,6 @@ class Command(BaseCommand):
                                 course_object = Courses.objects.get(code=code_course)
                             except ObjectDoesNotExist:
                                 course_object = Courses(code=code_course)
-
-                            course_object.codigo = find_code(course['nome'])
                             course_object.name= unicodedata.normalize('NFC', course['nome'][:200])
                             course_object.situation = unicodedata.normalize('NFC', course['situacao'][:200])
                             course_object.degree = unicodedata.normalize('NFC', course['grau'][:200])
