@@ -181,7 +181,7 @@ class Command(BaseCommand):
                                 #print("----------------- aiiii to exstinto: ", course['nome'],course['situacao'])
                                 continue
                             elif(course['grau'] != 'Bacharelado' and course['grau'] != 'Licenciatura'):
-                                print(course['grau'])
+                                #print(course['grau'])
                                 continue
 
                               
@@ -243,7 +243,7 @@ class Command(BaseCommand):
         self.write('Starting emec data import from all json files in the folder\n', status=Status.info)
         
         path = os.path.join(settings.BASE_DIR, 'emec/data/output/')
-        print("path:", path)
+        #print("path:", path)
         for filename in glob(path + '*.json'):
             uf = filename.replace(path, '').replace('.json', '')
             self.import_data_from_uf(uf)

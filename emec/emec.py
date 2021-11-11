@@ -45,7 +45,7 @@ class Institution(object):
 		"""
 		
 		if self.code_ies == None or self.code_ies == 0:
-			print('informe o codigo da ies')
+			#print('informe o codigo da ies')
 			return False
 
 		self.__parse_institution_details()
@@ -67,7 +67,7 @@ class Institution(object):
 		try:
 			response = requests.get(URL)
 		except Exception as e:
-			print(str(e))
+			#print(str(e))
 			return False
 
 		soup = BeautifulSoup(response.content, 'html.parser')
@@ -181,7 +181,7 @@ class Institution(object):
 		try:	
 			response = requests.get(URL)
 		except Exception as e:
-			print(str(e))
+			#print(str(e))
 			return False
 		
 		soup = BeautifulSoup(response.content, 'html.parser')
@@ -227,7 +227,7 @@ class Institution(object):
 		try:
 			response = requests.get(URL)
 		except Exception as e:
-			print(str(e))
+			#print(str(e))
 			return False
 		
 		soup = BeautifulSoup(response.content, 'html.parser')
@@ -292,7 +292,7 @@ class Institution(object):
 		try:
 			response = requests.get(URL)
 		except Exception as e:
-			print(str(e))
+			#print(str(e))
 			return False
 		curso = []
 
@@ -332,7 +332,7 @@ class Institution(object):
 		try:
 			response = requests.get(URL)
 		except Exception as e:
-			print(str(e))
+			#print(str(e))
 			return False
 		curso = []
 		soup = BeautifulSoup(response.content, 'html.parser')		
