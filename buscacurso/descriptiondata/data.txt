@@ -1,0 +1,12 @@
+﻿{
+    "cursosP": [
+        {
+            "cursosd": "DIREITO",
+            "descricao": "O CURSO DE DIREITO"
+        },
+        {
+            "cursosd": "CIENCIA DA COMPUTACAO",
+            "descricao": "O CURSO DE COMPUTACAO"
+        }
+    ]
+}
