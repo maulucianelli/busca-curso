@@ -186,7 +186,7 @@ class Command(BaseCommand):
 
                               
 
-                            code_course = (course['codigo'])
+                            code_course = find_code(course['nome'])
                             
                             try:
                                 course_object = Courses.objects.get(code=code_course)
