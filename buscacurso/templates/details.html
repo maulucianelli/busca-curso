@@ -4,7 +4,7 @@
 {%include 'partials/menu.html'%}
 <script src="{%static 'js/script.js'%}"></script>
 <script>
-  callAPI(b64convert(JSON.parse('{{test|safe}}')[0].fields.codigo), function (response) { showSalary(response) });
+  callAPI(b64convert(JSON.parse('{{test|safe}}')[0].fields.code), function (response) { showSalary(response) });
 </script>
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
