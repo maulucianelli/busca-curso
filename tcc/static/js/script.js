@@ -23,9 +23,12 @@ function callAPI(code, callback) {
 
 function showSalary(response){
     if(response.length>0){
-        document.getElementById("salario_junior").innerText += response[1].SALARIO_TRAINEE
-        document.getElementById("salario_pleno").innerText += response[1].SALARIO_PLENO
-        document.getElementById("salario_senior").innerText += response[1].SALARIO_SENIOR
+        document.getElementById("salario_junior").innerText = "R$" + response[1].SALARIO_TRAINEE
+        document.getElementById("salario_pleno").innerText = "R$" + response[1].SALARIO_PLENO
+        document.getElementById("salario_senior").innerText = "R$" + response[1].SALARIO_SENIOR
+    }
+    else{
+        document.getElementById("salario_pleno").innerHTML = "<h5>Informação de Salário Indisponível</h5>"
     }
 }
 var $rows = $('#table tr');
