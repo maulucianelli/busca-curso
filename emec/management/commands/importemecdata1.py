@@ -68,7 +68,7 @@ class Command(BaseCommand):
         
         #filename = os.path.join(settings.BASE_DIR, 'emec/emec_data/output/', uf.upper() + '.json')
         filename = os.path.join(settings.BASE_DIR, 'emec/data/output/',  uf.upper() + '.json')
-        print("filename:", filename)
+        #print("filename:", filename)
         # check if file exists
         if os.path.exists(filename):
             
@@ -77,7 +77,7 @@ class Command(BaseCommand):
             # open file and read json                
             with open(filename, encoding='utf-8') as data_file:
                 data = json.loads(data_file.read())
-                print (data)
+                #print (data)
 
             # start time            
             start = time.time()
@@ -177,8 +177,11 @@ class Command(BaseCommand):
                         for course in courses_list:
                             
                             # case disabled courses
-                            if (course['situacao'] == 'Em Extinção' or course['situacao'] == 'Extinto' ):
+                            if (course['situacao'] == 'Em Extinção' or course['situacao'] == 'Extinto'):
                                 #print("----------------- aiiii to exstinto: ", course['nome'],course['situacao'])
+                                continue
+                            elif(course['grau'] != 'Bacharelado' and course['grau'] != 'Licenciatura'):
+                                print(course['grau'])
                                 continue
 
                               
@@ -217,12 +220,12 @@ class Command(BaseCommand):
                             course_institution.uf = course['uf'] if 'uf' in course else ''
                             course_institution.city = course['municipio'] if 'municipio' in course else ''
                             course_institution.duration = semestres
-                            print(course_institution.name)
-                            print(course_institution.uf)
-                            print(course_institution.city)
-                            print(course_institution.duration)
-                            print(course_institution.course)
-                            print(course_institution.institution)
+                            #print(course_institution.uf)
+                            #print(course_institution.name)
+                            #print(course_institution.city)
+                            #print(course_institution.duration)
+                            #print(course_institution.course)
+                            #print(course_institution.institution)
                             course_institution.save()
                             
                             
