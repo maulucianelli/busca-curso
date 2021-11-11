@@ -1,0 +1,76 @@
+﻿{
+    "cursosP": [
+        {
+            "cursosd": "ADMINISTRAÇÃO",
+            "descricao": "O administrador é um profissional preparado para gerenciar recursos materiais, financeiros ou humanos de organizações jurídicas, podendo atuar em vários níveis, como a administração de uma equipe, de um departamento, empresa de pequeno porte, ou uma multinacional."
+        },
+        {
+            "cursosd": "ARQUITETURA E URBANISMO",
+            "descricao": "como um profissional capaz de pensar, organizar e dirigir o conjunto de atividades relativas à Arquitetura e ao Urbanismo, incluindo a capacidade de: elaborar projetos em distintas escalas, com soluções economicamente viáveis e culturalmente responsáveis; absorver novas tecnologias e visualizar, com criatividade, novas aplicações; analisar problemáticas e buscar por soluções adequadas aos aspectos humanísticos, sociais, culturais, ambientais, éticos, técnicos e estéticos."
+        },
+        {
+            "cursosd": "BIOMEDICINA",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "CIÊNCIAS CONTÁBEIS",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "COMUNICAÇÃO SOCIAL - PUBLICIDADE E PROPAGANDA",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "DIREITO",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "EDUCAÇÃO FÍSICA",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "ENFERMAGEM",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "ENGENHARIA AGRONÔMICA",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "ENGENHARIA CIVIL",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "ENGENHARIA ELÉTRICA",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "ENGENHARIA MECÂNICA",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "ESTÉTICA",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "FARMÁCIA",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "FISIOTERAPIA",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "MEDICINA",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "MEDICINA VETERINÁRIA",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        },
+        {
+            "cursosd": "NUTRIÇÃO",
+            "descricao": "ADICIONADO PELO COMANDO DO MAURICIO"
+        }
+    ]
+}

@@ -13,13 +13,19 @@ from django.db import transaction
 
 from tcc import settings
 
-from buscacurso.models import *
+from buscacurso.models import Courses
+from buscacurso.models import CoursesInstitution
+from buscacurso.models import Institution
+from buscacurso.models import Maintainer
 
 from buscacurso.utils.functions import Status, clean_duration, cleaning_cnpj, only_numerics, clean_ies_name, find_code 
 
+
 class Command(BaseCommand):
+
     verbose = False
-    help = 'Import descriptions.'
+    help = 'Import e-MEC data for database Buscacurso.'
+
     def add_arguments(self, parser):
         
         parser.add_argument(
@@ -51,62 +57,87 @@ class Command(BaseCommand):
             if self.verbose or force_verbose:                
                 self.stdout.write(msg, style_func=lambda x: str(status + '%s' + Status.none) % str(x) )
                 
+                
     def import_data_from_path(self):
-        """
-        Import emec data from json file with name of the UF
-        
-        Args:
-            uf {String}:    uf name for open json file
-        """
-        
-        #filename = os.path.join(settings.BASE_DIR, 'emec/emec_data/output/', uf.upper() + '.json')
+
         filename = os.path.join(settings.BASE_DIR, 'buscacurso/descriptiondata/',  'data.json')
-        #print("filename:", filename)
-        # check if file exists
+        
         if os.path.exists(filename):
             
-            self.write('Starting description data import from json file', status=Status.info)
+            self.write('Starting emec data import from json file', status=Status.info)
         
             # open file and read json                
-            with open(filename, encoding='utf-8') as data_file:
+            with open(filename, encoding='utf-8-sig') as data_file:
                 data = json.loads(data_file.read())
-                #print (data)
+                
+                print (data)
 
             # start time            
             start = time.time()
             
-           # with transaction.atomic():
-        coursesnames=[]
-        text= "custom description"
-        course_set = Courses.objects.all()
-        # The `iterator()` method ensures only a few rows are fetched from
-        # the database at a time, saving memory.
-        for course in course_set.iterator():
-            print(course.name)
-            course.description = text
-            course.save()
+            with transaction.atomic():
+                courses_list = data ["cursosP"]
+                coursesnames=[]
+                text= "custom description"
+                course_set = Courses.objects.all()
+
+                for curso in courses_list:
+
+                    cursosD = curso['cursosd'] 
+                    descri = curso["descricao"]
+                    for course in course_set.iterator():
+                        if course.name == cursosD:
+                            course.description = descri
+                            course.save()
+                    
+                for course in course_set.iterator():
+                    coursesnames.append(course.description)
+                print(coursesnames)                  
+
+                ##course_set = Courses.objects.all()
             
-        for course in course_set.iterator():
-            coursesnames.append(course.description)
-        print(coursesnames)
+                #for course in course_set.iterator():
+                #    print(course.name)
+                    #if
+                #        course.description = text
+                 #       course.save()
+                    
+                #for course in course_set.iterator():
+                 #   coursesnames.append(course.description)
+                
+               # print(coursesnames)
 
-
-        
-    def handle(self, *args, **options):
-        """
-        `importemecdata` command handler.
-        Args:
-            *args (tuple)     : arguments after `importemecdata` command, ex: `python manage.py importemecdata arg1 arg2 arg3`
-            **options (dict)  : dict with options by default option ['verbose'] / (--v) is False
-        """
-
-        self.verbose = options['verbose']
-        
-        if options['uf']:
-            self.import_data_from_uf(options['uf'])
+                            
+            elapsed = time.time() - start
+            
         else:
-            self.import_data_from_path()
-                        
-        self.write('Finish run import emec data!', force_verbose=True)
+            self.write('Json file for UF informed not found, please check in the folder', True, status=Status.error)
+    
+    
+    def import_data_from_uf(self):
+        """
+        Import emec data from all json files in the folder
+        """
+        
+        self.write('Starting emec data import from all json files in the folder\n', status=Status.info)
+        
+        path = os.path.join(settings.BASE_DIR, 'buscacurso/descriptiondata/')
+        #print("path:", path)
+        for filename in glob('data.json'):
+            uf = filename.replace(path, '').replace('.json', '')
+            self.import_data_from_uf(uf)
+    
+    
+    def handle(self, *args, **options):
+        self.verbose = options['verbose']
+        self.import_data_from_path()
+                    
+        self.write('Finish run import description data!', force_verbose=True)
+
+
+
+
+
+
         
         
