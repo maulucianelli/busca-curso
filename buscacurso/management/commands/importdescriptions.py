@@ -106,7 +106,7 @@ class Command(BaseCommand):
                         if course.name == cursosD:
                             course.description = descri
                             course.save()
-               '''          
+                        
 
                 #for course in course_set.iterator():
                     #coursesnames.append(course.description)
@@ -124,7 +124,7 @@ class Command(BaseCommand):
                  #   coursesnames.append(course.description)
                 
                # print(coursesnames)
-
+                ''' 
                             
             elapsed = time.time() - start
             
