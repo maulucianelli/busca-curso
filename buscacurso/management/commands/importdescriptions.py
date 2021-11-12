@@ -75,13 +75,30 @@ class Command(BaseCommand):
             # start time            
             start = time.time()
             
-            with transaction.atomic():
-                courses_list = data ["cursosP"]
-                coursesnames=[]
-                text= "custom description"
-                course_set = Courses.objects.all()
+            #with transaction.atomic():
+            unavailable = "Descrição Indisponivel"
+            course_clean = Courses.objects.all()
+            for course in course_clean.iterator():
+                course.description = unavailable
+                course.save()
 
-                for curso in courses_list:
+            
+            courses_list = data ["cursosP"]
+            coursesnames=[]
+            text= "custom description"
+            course_set = Courses.objects.all()
+
+            for course in course_set.iterator():
+                for curso in courses_list:    
+                    cursosD = curso['cursosd'] 
+                    descri = curso["descricao"]      
+                    if course.name == cursosD:    
+                        course.description = descri
+                        course.save()
+                        break
+                            
+
+            '''    for curso in courses_list:
 
                     cursosD = curso['cursosd'] 
                     descri = curso["descricao"]
@@ -89,11 +106,11 @@ class Command(BaseCommand):
                         if course.name == cursosD:
                             course.description = descri
                             course.save()
-                         
+               '''          
 
-                for course in course_set.iterator():
-                    coursesnames.append(course.description)
-                print(coursesnames)                  
+                #for course in course_set.iterator():
+                    #coursesnames.append(course.description)
+                #print(coursesnames)                  
 
                 ##course_set = Courses.objects.all()
             
