@@ -11,7 +11,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
-from tcc import settings
+from tcc.settings import base
 
 from buscacurso.models import Courses
 from buscacurso.models import CoursesInstitution
@@ -67,7 +67,7 @@ class Command(BaseCommand):
         """
         
         #filename = os.path.join(settings.BASE_DIR, 'emec/emec_data/output/', uf.upper() + '.json')
-        filename = os.path.join(settings.BASE_DIR, 'emec/data/output/',  uf.upper() + '.json')
+        filename = os.path.join(base.BASE_DIR, 'emec/data/output/',  uf.upper() + '.json')
         #print("filename:", filename)
         # check if file exists
         if os.path.exists(filename):
@@ -244,7 +244,7 @@ class Command(BaseCommand):
         
         self.write('Starting emec data import from all json files in the folder\n', status=Status.info)
         
-        path = os.path.join(settings.BASE_DIR, 'emec/data/output/')
+        path = os.path.join(base.BASE_DIR, 'emec/data/output/')
         #print("path:", path)
         for filename in glob(path + '*.json'):
             uf = filename.replace(path, '').replace('.json', '')
