@@ -100,6 +100,7 @@ class Command(BaseCommand):
                         break
                             
             print (counter)
+            print (data)
             '''    for curso in courses_list:
 
                     cursosD = curso['cursosd'] 
