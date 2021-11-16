@@ -187,6 +187,8 @@ class Command(BaseCommand):
                               
 
                             code_course = find_code(course['nome'])
+                            if code_course == '-1':
+                                continue
                             
                             try:
                                 course_object = Courses.objects.get(code=code_course)
