@@ -113,12 +113,56 @@
             "descricao": "A Ciência Política estuda as estruturas de poder e suas respectivas consequências no comportamento humano em sociedade. O profissional da área é responsável por analisar políticas públicas, regimes políticos, eleições, processo legislativo, relações internacionais, entre outros."
         },
         {
+            "cursosd": "CIÊNCIAS SOCIAIS",
+            "descricao": "Este profissional se dedica a coordenar, planejar, assessorar e executar tarefas ligadas a atividades de pesquisa na área social, tanto em instituições públicas quanto em privadas. O curso de licenciatura em Ciências Sociais tem por objetivo fundamental a formação de professor de ensino médio."
+        },
+        {
+            "cursosd": "COMPUTAÇÃO",
+            "descricao": "O curso de Ciência da Computação forma profissionais qualificados para desenvolver programas e sistemas de informática, desde o planejamento do projeto até a implantação e gerenciamento do software. Por ser da área de ciências exatas, o aluno precisa ter uma boa base matemática e raciocínio lógico desenvolvido."
+        },
+        {
             "cursosd": "COMUNICAÇÃO SOCIAL - PUBLICIDADE E PROPAGANDA",
             "descricao": "A publicidade é uma atividade profissional dedicada à difusão pública de empresas, produtos ou serviços. Pode ser qualificada como uma propaganda comercial. É a divulgação de produtos, serviços, e ideias junto ao público, tendo, em vista, induzi-lo a uma atitude dinâmica favorável."
         },
         {
-            "cursosd": "DIREITO",
-            "descricao": "O Direito cuida da aplicação e cumprimento das leis vigentes com o objetivo de manter a sociedade organizada. O profissional formado nesta área possui uma compreensão clara dos direitos e deveres dos cidadãos e defende os interesses de pessoas físicas ou jurídicas."
+            "cursosd": "COMUNICAÇÃO E MULTIMEIOS",
+            "descricao": "Os profissionais de Multimeios são preparados para elaborar roteiros, produzir, dirigir, montar, trabalhar com pós-produção em filmes, videoarte, videoclipes, videomapping e vídeos para mídias sociais."
+        },
+        {
+            "cursosd": "COMUNICAÇÃO SOCIAL - JORNALISMO",
+            "descricao": "O Bacharelado dura 8 semestres e prepara o futuro jornalista para atuar em diversos canais: rádio, TV, mídia impressa e internet. A função é apurar, preparar e transmitir notícias, reportagens e editoriais à população em áreas do Jornalismo como esporte, economia e cultura."
+        },
+        {
+            "cursosd": "COMÉRCIO EXTERIOR",
+            "descricao": "Cabe ao profissional de Comércio Exterior analisar os mercados, conhecer as regras de legislação entre os vários países e também controlar e acompanhar de perto o processo de exportação/importação. Sua principal função é justamente facilitar e mediar o comércio entre as diferentes nações."
+        },
+        {
+            "cursosd": "CRIMINOLOGIA",
+            "descricao": "A criminologia é a ciência que estuda o crime e analisa a situação e a personalidade do delinquente, da vítima e os fatores que influenciam na ocorrência da criminalidade. ... O profissional que atua nesse setor baseia seu trabalho na observação dos fatos, na cena do delito, e não apenas em argumentos e opiniões."
+        },
+        {
+            "cursosd": "DANÇA",
+            "descricao": "O bacharelado forma profissionais habilitados a participar de espetáculos e a pesquisar novas linguagens na dança, com disciplinas práticas de técnicas de dança, música, voz e acrobacia, e teóricas, como comunicação e expressão, anatomia e psicologia."
+        },
+        {
+            "cursosd": "DESENHO INDUSTRIAL",
+            "descricao": "O profissional formado em Desenho Industrial é conhecido como desenhista industrial e é responsável pela elaboração de desenhos e croquis que irão possibilitar o desenvolvimento de diversos produtos. Esses desenhos técnicos definem aspectos construtivos e de estética."
+        },
+        {
+            "cursosd": "DESIGN",
+            "descricao": "Responsável por desenvolver projetos gráficos ou de comunicação visual, por criar layouts de objetos ou peças dos mais diversos tipos, o designer pode atuar em diversos segmentos nas mais distintas áreas."
+        },
+        {
+            "cursosd": "DESIGN DE GAMES",
+            "descricao": "O profissional da área de Design de Games projeta e desenvolve jogos eletrônicos. Ele participa de todos os processos que envolvem a criação de games, desde a definição das regras do jogo até os testes finais, passando pela criação e animação dos personagens, definição do roteiro e a animação das telas."
+        },
+        {
+            "cursosd": "DESIGN DE INTERIORES",
+            "descricao": "Sobre o curso de Design de Interiores. O curso de Design de Interiores forma profissionais capazes de planejar ambientes de acordo com padrões estéticos e de funcionalidade. O designer de interiores cria projetos para residências, espaços comerciais e corporativos, além de ambientes promocionais e cenográficos."
+        },
+        {
+            "cursosd": "DESIGN DE MODA",
+            "descricao": "O curso de bacharel em Design de Moda é oferecido para quem deseja atuar com o lado criativo da profissão, como desenhar roupas, criar acessórios e figurinos. O nosso aluno também é preparado para cuidar da parte de negócios e gestão na indústria e no comércio."
         },
         {
             "cursosd": "DIREITO",
@@ -140,17 +184,89 @@
             "cursosd": "ENGENHARIA CIVIL",
             "descricao": "O engenheiro civil projeta, gerencia e executa obras como casas, prédios, pontes, viadutos, estradas e barragens. Ele acompanha todas as etapas de uma construção ou reforma, analisa as condições do solo e estuda a insolação e a ventilação do local e até a definição dos tipos de fundação e os acabamentos."
         },
+      {
+            "cursosd": "ENGENHARIA DE PESCA",
+            "descricao": "O Engenheiro de Pesca é o responsável por analisar, planejar e desenvolver as atividades relacionadas ao cultivo, captura e comercialização de peixes e demais animais aquáticos. São atividades do engenheiro de Pesca, colocar em prática as teorias e conhecimentos adquiridos durante a graduação.."
+        },
+       {
+            "cursosd": "ENGENHARIA DE PETRÓLEO",
+            "descricao": "O engenheiro de petróleo combina as técnicas da engenharia com conhecimentos em geologia e mineração para descobrir e explorar poços e jazidas de petróleo e gás natural. Ele ainda é preparado para acompanhar a produção e o beneficiamento do material extraído, gerenciar sua comercialização e transporte."
+        },
+        {
+            "cursosd": "ENGENHARIA DE PRODUÇÃO",
+            "descricao": "O engenheiro de produção controla o processo de fabricação de produtos e o uso dos recursos necessários para isso. No dia a dia, o profissional lida com sistemas de compra e estoque, com a programação de máquinas e até no gerenciamento de equipes."
+        },
+        {
+            "cursosd": "ENGENHARIA DE ROBÔS",
+            "descricao": "O Engenheiro de Robôs desenvolve tecnologias para os mais diversos ramos de indústrias e serviços. ... O egresso dessa graduação poderá ainda ocupar vagas no mercado de trabalho de outras áreas da Engenharia, como Elétrica, Mecânica e de Automação e Controle."
+        },
+        {
+            "cursosd": "ENGENHARIA DE SISTEMAS CIBER FÍSICOS",
+            "descricao": "O curso de Engenharia de Sistemas Ciber-Físicos tem como objetivo formar profissionais críticos, capacitados para utilizar com eficácia softwares e tecnologias da informação e comunicação na solução de problemas e utilizar modelos para descrever e explicar a realidade."
+        },
+        {
+            "cursosd": "ENGENHARIA DE SOFTWARE",
+            "descricao": "O engenheiro de software cuida de toda a parte técnica e científica dos sistemas, desde o desenvolvimento até a gestão. ... no desenvolvimento, ele pode criar jogos e softwares para computadores, videogames e dispositivos móveis (tablets e smartphones)."
+        },
+        {
+            "cursosd": "ENGENHARIA DE TRANSPORTES",
+            "descricao": "O curso superior de Engenharia de Transportes forma profissionais capazes de planejar, criar, manter e remodelar sistemas de transporte de pessoas e cargas. A área estuda o funcionamento das malhas rodoviária, ferroviária, hidroviária e aérea.."
+        },
+        {
+            "cursosd": "ENGENHARIA ELETRÔNICA",
+            "descricao": "o Bacharelado em Engenharia Eletrônica é uma graduação muito importante e em alta no mercado de trabalho. O curso forma profissionais capazes de projetar e executar sistemas de transmissão, geração, distribuição e utilização de energia elétrica."
+        },
+        {
+            "cursosd": "ENGENHARIA ELETRÔNICA E DE TELECOMUNICAÇÕES",
+            "descricao": "A Engenharia de Telecomunicações é responsável pelo planejamento, projeto, operação e manutenção dos sistemas eletrônicos e de telecomunicações. ... Este engenheiro tem o objetivo de garantir a comunicação por meio de sistemas de telefonia, rádio e televisão, além da transmissão de dados em redes de computadores."
+        },
+        {
+            "cursosd": "ENGENHARIA FLORESTAL",
+            "descricao": "O engenheiro florestal trabalha com recursos naturais renováveis da floresta. Atua no desenvolvimento de projetos de implantação, restauração, manejo, conservação e exploração florestal, processamento, desenvolvimento e industrialização de produtos provenientes de florestas naturais e plantadas."
+        },
         {
             "cursosd": "ENGENHARIA ELÉTRICA",
             "descricao": "Em todos os casos, o papel do engenheiro eletricista é planejar, projetar, executar e monitorar o desempenho de sistemas elétricos e eletrônicos. Para tanto, ele coordena e supervisiona equipes de técnicos em elétrica, que são profissionais que atuam em campo e são responsáveis pelas atividades mais operacionais"
         },
         {
-            "cursosd": "ENGENHARIA MEC NICA",
+            "cursosd": "ENGENHARIA FÍSICA",
+            "descricao": "É a aplicação de conhecimentos da Física na pesquisa e no desenvolvimento de materiais e tecnologias. ... O engenheiro físico pode criar, desenvolver e aplicar dispositivos que usam raios laser em aparelhos médicos e biomédicos. Nas indústrias química e petroquímica, ele projeta e testa equipamentos."
+        },
+        {
+            "cursosd": "ENGENHARIA INDUSTRIAL MADEIREIRA",
+            "descricao": "Este bacharel cuida do processo industrial de transformação da madeira, de seu corte e armazenamento à fabricação de produtos. Ele planeja e executa projetos industriais, desenvolve equipamentos e cuida de sua manutenção. ... Na construção civil, trabalha em projetos que envolvem madeira."
+        },
+        {
+            "cursosd": "ENGENHARIA MECATRÔNICA",
             "descricao": "A Engenharia Mecânica é um segmento da Engenharia responsável por cuidar de projetos, construções, análises e manutenções de sistemas mecânicos. Por isso, a graduação na área vai preparar você para lidar com todas as atividades acima, além de prestar consultoria em empresas de ramos variados."
+        },
+        {
+            "cursosd": "ENGENHARIA MEC NICA",
+            "descricao": "A Engenharia Mecânica, em particular, é a divisão responsável por idealizar, avaliar, construir e condicionar sistemas de natureza mecânica. Em um mundo apoiado nas máquinas, essa especialização ganha enorme importância simbólica e material, trazendo excelentes retornos profissionais."
+        },
+        {
+            "cursosd": "ENGENHARIA QUÍMICA",
+            "descricao": "A Química e a Engenharia Química lidam com a composição de substâncias, transformação de matérias-primas e análise de produtos nos mais variados setores da economia, desde a agroindústria até empresas de tecnologia."
+        },
+        {
+            "cursosd": "ENGENHARIA TÊXTIL",
+            "descricao": "Ele projeta as instalações da indústria e os equipamentos da linha de produção em tecelagens e empresas de confecção. O profissional controla custos, processos industriais, como estamparia, tingimento, corte e costura, bem como a qualidade da matéria-prima e do produto final."
         },
         {
             "cursosd": "ESTÉTICA",
             "descricao": "O profissional de Estética alia a aplicação de produtos cosméticos a técnicas de manipulação e utilização de aparelhos para limpeza da pele, hidratação, depilação e massagem para contorno corporal. Ele é especialista em beleza associada ao bem-estar e saúde. ... Porém, nem só de clínicas de estética vive o esteticista."
+        },
+        {
+            "cursosd": "ESTATÍSTICA",
+            "descricao": "O curso de Estatística formar especialistas em matemática voltada para a análise e interpretação de dados. O estatístico é o profissional responsável por coordenar o levantamento de informações e montar bancos de dados. Pode trabalhar nas áreas de análise e inteligência de mercado."
+        },
+        {
+            "cursosd": "ESTUDOS SOCIAIS",
+            "descricao": "O profissional formado em Ciências Sociais atua na análise dos hábitos e costumes de diversos grupos sociais, bem como suas características religiosas, familiares, organização institucional e econômica. ... Suas pesquisas podem ser direcionadas a três diferentes áreas: Antropologia, Sociologia e Ciências Políticas."
+        },
+        {
+            "cursosd": "ESTÉTICA E COSMÉTICA",
+            "descricao": "O curso de Estética e Cosmética forma profissionais responsáveis por gerar bem-estar e conservar a beleza e a saúde dos pacientes. Mais do que melhorar a aparência, esse profissional ajuda a trazer mais autoestima às pessoas."
         },
         {
             "cursosd": "FARMÁCIA",
@@ -162,7 +278,7 @@
         },
        {
             "cursosd": "FILOSOFIA",
-            "descricao": " Pesquisador na área acadêmica e não acadêmica; Professor do ensino superior; Pode atuar em empresas púbilcas e privadas, ONGs, organizações governamentais, como curador de museus, etc. Colunista em veículos de comunicação, como jornais e revistas."
+            "descricao": " Pesquisador na área acadêmica e não acadêmica; Professor do ensino superior; Pode atuar em empresas públicas e privadas, ONGs, organizações governamentais, como curador de museus, etc. Colunista em veículos de comunicação, como jornais e revistas."
         },
        {
             "cursosd": "FISIOTERAPIA",
@@ -366,7 +482,7 @@
         },
         {
             "cursosd": "SOCIOLOGIA - PROGRAMA SEGUNDA LICENCIATURA",
-            "descricao": "Além de atuar como professor ou pesquisador, um sociólogo pode desenvolver atividades como: Criação de políticas públicas. Assessoria a partidos políticos. Elaboração e revisão de textos sobre assuntos sociais e políticos.."
+            "descricao": "Além de atuar como professor ou pesquisador, um sociólogo pode desenvolver atividades como: Criação de políticas públicas. Assessoria a partidos políticos. Elaboração e revisão de textos sobre assuntos sociais e políticos."
         },
         {
             "cursosd": "SOCIOLOGIA E POLÍTICA",
