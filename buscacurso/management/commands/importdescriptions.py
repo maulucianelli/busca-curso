@@ -70,7 +70,7 @@ class Command(BaseCommand):
             with open(filename, encoding='utf-8-sig') as data_file:
                 data = json.loads(data_file.read())
                 
-                print (data)
+                #print (data)
 
             # start time            
             start = time.time()
@@ -87,17 +87,19 @@ class Command(BaseCommand):
             coursesnames=[]
             text= "custom description"
             course_set = Courses.objects.all()
-
+            counter =0 
             for course in course_set.iterator():
+               
                 for curso in courses_list:    
                     cursosD = curso['cursosd'] 
                     descri = curso["descricao"]      
                     if course.name == cursosD:    
                         course.description = descri
                         course.save()
+                        counter+=1
                         break
                             
-
+            print (counter)
             '''    for curso in courses_list:
 
                     cursosD = curso['cursosd'] 

@@ -165,8 +165,24 @@
             "descricao": "O curso de bacharel em Design de Moda é oferecido para quem deseja atuar com o lado criativo da profissão, como desenhar roupas, criar acessórios e figurinos. O nosso aluno também é preparado para cuidar da parte de negócios e gestão na indústria e no comércio."
         },
         {
+            "cursosd": "DESIGN DE PRODUTO",
+            "descricao": "O que faz e quais são as áreas de atuação do designer de produto. Segundo o Guia de Profissões da Catho, o profissional de Design de Produto atua na concepção estética de produtos, elabora a identidade visual com foco na adequação material, ergonomia, atenção ambiental, praticidade e beleza."
+        },
+        {
+            "cursosd": "DESIGN GRÁFICO",
+            "descricao": "criação e produção gráfica; comunicação digital, desenho técnico; web design; comunicação e ilustração digital; comunicação em computação gráfica; design de multimídia; design digital; design gráfico e programação visual; editoração eletrônica; produção gráfica digital, etc."
+        },
+        {
+            "cursosd": "DESIGN VISUAL",
+            "descricao": "Ele compreende os conceitos artísticos e funcionais, projeta e idealiza um objeto utilitário com fins definidos. É também o profissional que monta e ilustra peças de comunicação visual vistas em propagandas, comunicados, material interno e externo, fachadas, adesivagem e outros tipos de expressões visuais."
+        },
+        {
             "cursosd": "DIREITO",
             "descricao": "O Direito cuida da aplicação e cumprimento das leis vigentes com o objetivo de manter a sociedade organizada. O profissional formado nesta área possui uma compreensão clara dos direitos e deveres dos cidadãos e defende os interesses de pessoas físicas ou jurídicas."
+        },
+        {
+            "cursosd": "EDUCAÇÃO ESPECIAL",
+            "descricao": "Com a licenciatura em Educação Especial você irá ensinar e auxiliar alunos com deficiência (física, intelectual, auditiva e visual), transtorno do espectro autista, transtornos globais de desenvolvimento e altas habilidades/superdotação."
         },
         {
             "cursosd": "EDUCAÇÃO FÍSICA",
@@ -177,12 +193,86 @@
             "descricao": "O curso de Enfermagem forma profissionais para atuar no meio da saúde através da prevenção, proteção e restabelecimento da saúde dos pacientes junto a outros profissionais do setor. ... Nos anos finais do curso, também são ministradas aulas práticas em laboratórios, além do atendimento real a pacientes."
         },
         {
+            "cursosd": "ENGENHARIA AEROESPACIAL",
+            "descricao": "A área de Engenharia Aeroespacial lida, entre outras coisas, com o processo de projetar, criar, construir e fabricar qualquer artefato que voe. Jatos, helicópteros e espaçonaves, por exemplo, fazem parte deste campo, que tem dois principais ramos: Engenharia Aeronáutica e Engenharia Astronáutica."
+        },
+        {
+            "cursosd": "ENGENHARIA ENGENHARIA AERONÁUTICA",
+            "descricao": "A Engenharia Aeronáutica é a área responsável pelo projeto e fabricação de aeronaves. ... O engenheiro aeronáutico pode atuar com diferentes tipos de aeronaves, helicópteros e planadores. Além da elaboração de projetos, o profissional também executa atividades voltadas para a manutenção."
+        },
+        {
             "cursosd": "ENGENHARIA AGRONÔMICA",
             "descricao": "A Engenharia Agronômica é uma área do conhecimento que aborda as tecnologias e os processos relacionados com produção agrícola e agropecuária. A graduação tem duração média de 5 anos e, ao longo do curso, os estudantes estudam temas ligados à produção animal, composição do solo, sustentabilidade, gestão, dentre outros"
         },
         {
+            "cursosd": "ENGENHARIA AGRÍCOLA",
+            "descricao": "O Engenheiro Agrícola é o profissional responsável pelo planejamento e execução de sistemas de produção agrícola e de processos agroindustriais. Ele faz também a gestão dos recursos naturais e dos sistemas de irrigação e drenagem, evitando a erosão do solo e a poluição de mananciais."
+        },
+        {
+            "cursosd": "ENGENHARIA AMBIENTAL",
+            "descricao": "A principal função de Engenheiro Ambiental é desenvolver técnicas para a preservação do meio ambiente através do planejamento, coordenação e administração de estações de tratamento de esgoto, redes de distribuição da água e descarte do lixo."
+        },
+        {
+            "cursosd": "ENGENHARIA AUTOMOTIVA",
+            "descricao": "é responsável por planejar, projetar, construir e realizar a manutenção de automóveis e de seus componentes e sistemas. Atua também na elaboração dos processos de fabricação de veículos e autopeças, levando em consideração sua eficácia e viabilidade econômica."
+        },
+        {
+            "cursosd": "ENGENHARIA BIOMÉDICA",
+            "descricao": "O engenheiro biomédico estuda formas de aperfeiçoar o funcionamento das máquinas hospitalares, pesquisa materiais adequados para cada uma delas, de acordo com suas funções, além de trabalhar com a manutenção da aparelhagem."
+        },
+        {
+            "cursosd": "ENGENHARIA CARTOGRÁFICA E DE AGRIMENSURA",
+            "descricao": "Este engenheiro trabalha com a captação e a análise de dados geográficos e topográficos para a elaboração de mapas. Com base em pesquisas de campo e cálculos, planeja, orienta e supervisiona o levantamento, a análise e a interpretação de aspectos físicos de uma região para produzir mapas e cartas impressas ou digitais."
+        },
+        {
             "cursosd": "ENGENHARIA CIVIL",
             "descricao": "O engenheiro civil projeta, gerencia e executa obras como casas, prédios, pontes, viadutos, estradas e barragens. Ele acompanha todas as etapas de uma construção ou reforma, analisa as condições do solo e estuda a insolação e a ventilação do local e até a definição dos tipos de fundação e os acabamentos."
+        },
+
+        {
+            "cursosd": "ENGENHARIA DA COMPUTAÇÃO",
+            "descricao": "O curso de Engenharia de Computação habilita a pessoa para trabalhar com o desenvolvimento e planejamento de softwares e hardwares. Com essa formação, ela poderá projetar, programar e gerenciar sistemas computacionais, além de criar e projetar computadores, periféricos e circuitos."
+        },
+        {
+            "cursosd": "ENGENHARIA DE ALIMENTOS",
+            "descricao": "O engenheiro de alimentos é o profissional responsável por fabricar, conservar, armazenar e transportar alimentos fabricados em indústria, principal local de trabalho do especialista."
+        },
+        {
+            "cursosd": "ENGENHARIA DE BIOPROCESSOS E BIOTECNOLOGIA",
+            "descricao": "A Engenharia de Bioprocessos e Biotecnologia é a área do conhecimento responsável por aplicar os avanços tecnológicos da biologia e produzir em escala industrial visando a solução de um problema ou criação de um novo produto."
+        },
+        {
+            "cursosd": "ENGENHARIA DE BIOSSISTEMAS",
+            "descricao": "O Engenheiro de Biossistemas trabalha promovendo soluções de engenharia, principalmente instrumentação, automação e precisão, para sistemas que envolvam fatores biológicos, tais como as etapas da cadeia de produção vegetal e animal, energia, biocombustíveis e gestão de resíduos na agroindústria.."
+        },
+
+        {
+            "cursosd": "ENGENHARIA DE CONTROLE E AUTOMAÇÃO",
+            "descricao": "Um profissional formado em Engenharia de Controle e Automação projeta máquinas, desenvolve tecnologia para elas e gerencia o seu funcionamento. Isso quer dizer que ele precisa entender de mecânica, computação e ser capaz de desenvolver sistemas elétricos e peças eletrônicas."
+        },
+        {
+            "cursosd": "ENGENHARIA DE ENERGIA",
+            "descricao": "O Engenheiro de Energia é um profissional com formação multidisciplinar que atua no planejamento, análise e desenvolvimento de sistemas de geração, transporte, transmissão, distribuição e utilização de energia."
+        },
+        {
+            "cursosd": "ENGENHARIA DE GESTÃO",
+            "descricao": "A Engenharia de Gestão trata do projeto, melhoria, implantação, gestão e gerência de sistemas integrados de pessoas, materiais, informações, equipamentos e energia para a produção de bens e serviços de modo otimizado."
+        },
+        {
+            "cursosd": "ENGENHARIA DE INOVAÇÃO",
+            "descricao": "O engenheiro de Inovação atua na elaboração, no planejamento e na implantação de novos processos e técnicas em indústrias, laboratórios de pesquisa, empresas de serviço e outras organizações. Portanto, é um profissional que está sempre na vanguarda de seu campo de atuação."
+        },
+        {
+            "cursosd": "ENGENHARIA DE INSTRUMENTAÇÃO, AUTOMAÇÃO E ROBÓTICA",
+            "descricao": "Ele é responsável por analisar, projetar e desenvolver soluções para os problemas de instrumentação, automação e robótica enfrentados nas indústrias."
+        },
+        {
+            "cursosd": "ENGENHARIA DE MANUFATURA",
+            "descricao": "O que faz. O engenheiro de manufatura pode trabalhar em qualquer campo em que se produzam bens duráveis ou não duráveis, desde a indústria aeronáutica até a de embalagens, passando pelas indústrias automobilística e eletroeletrônica."
+        },
+        {
+            "cursosd": "ENGENHARIA DE MATERIAIS",
+            "descricao": "A Engenharia de Materiais é a área responsável por pesquisar, transformar e criar novos materiais, além de descobrir outras formas de uso para os já existentes. Com isso, ela contribui para aumentar a qualidade dos itens fabricados, auxiliando, assim, os processos produtivos."
         },
       {
             "cursosd": "ENGENHARIA DE PESCA",
@@ -510,5 +600,6 @@
         }
     ]
 }
+
 
 
