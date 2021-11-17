@@ -1,0 +1,86 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+.scroll-small {
+ overflow-y: scroll;
+  height: auto;
+  max-height: 400px;
+  padding: 1rem;
+}
+.scroll-big {
+ overflow-y: scroll;
+  height: auto;
+  max-height: 2000px;
+  padding: 1rem;
+}
+.round_border{
+  border-radius: 20%
+}
+.cover{
+  object-fit: cover;
+}
+.image{
+  height: 400px;
+  width: 650px;
+}
+
+.myInput {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+.myTable{
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+.myTable th, .myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+.myTable tr{
+  border-bottom: 1px solid rgb(36, 30, 30);
+}
+
+.myTable tr.header, .myTable tr:hover{
+  background-color:  #911414;
+}
+
+.tableFixHead-small {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.tableFixHead-big {
+  overflow: auto;
+  max-height: 2000px;
+}
+
+.tableFixHead-small thead th {
+  position: sticky;
+  top: 0; 
+  z-index: 1; 
+}
+
+.tableFixHead-big thead th {
+  position: sticky;
+  top: 0; 
+  z-index: 1; 
+}
